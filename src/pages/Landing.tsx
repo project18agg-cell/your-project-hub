@@ -48,6 +48,7 @@ const Landing = () => {
   const reduceMotion = useReducedMotion();
   const [businessType, setBusinessType] = useState('Retail');
   const recommendation = useMemo(() => recommendations[businessType], [businessType]);
+  const HallIcon = publicSolutions[4].icon;
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -111,7 +112,7 @@ const Landing = () => {
               ))}
             </div>
             <div className="mt-4 flex flex-col justify-between gap-5 border border-solution-halls/25 bg-solution-halls/10 p-5 sm:flex-row sm:items-center sm:p-7">
-              <div className="flex items-start gap-4"><div className="flex h-11 w-11 shrink-0 items-center justify-center border border-solution-halls/20 bg-card text-solution-halls"><publicSolutions.4.icon /></div><div><p className="font-display text-xl font-bold">Already run a hall or event venue?</p><p className="mt-1 text-sm text-muted-foreground">Upcurv Halls brings bookings, payments and event coordination together.</p></div></div>
+              <div className="flex items-start gap-4"><div className="flex h-11 w-11 shrink-0 items-center justify-center border border-solution-halls/20 bg-card text-solution-halls"><HallIcon /></div><div><p className="font-display text-xl font-bold">Already run a hall or event venue?</p><p className="mt-1 text-sm text-muted-foreground">Upcurv Halls brings bookings, payments and event coordination together.</p></div></div>
               <Button variant="outline" asChild><Link to="/upcurv-halls">Explore Upcurv Halls <ArrowRight /></Link></Button>
             </div>
           </div>
