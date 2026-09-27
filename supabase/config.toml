@@ -1,1 +1,4 @@
-project_id = "nkcijbhqwkexnveqezyq"
+project_id = "vjsugiuabyecemeaccku"
+
+[functions.hiring-emails]
+verify_jwt = false
