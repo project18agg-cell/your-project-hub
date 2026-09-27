@@ -2,22 +2,14 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider } from "@/contexts/AuthContext";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import Auth from "./pages/Auth";
 import Landing from "./pages/Landing";
-import Vahanhub from "./pages/Vahanhub";
-import UpcurvEcom from "./pages/UpcurvEcom";
-import UpcurvRetail from "./pages/UpcurvRetail";
-import UpcurvPrime from "./pages/UpcurvPrime";
-import UpcurvWash from "./pages/UpcurvWash";
 import UpcurvHalls from "./pages/UpcurvHalls";
-import UpcurvLabs from "./pages/UpcurvLabs";
-import Blogs from "./pages/Blogs";
-import Franchise from "./pages/Franchise";
 import About from "./pages/About";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
@@ -37,9 +29,6 @@ import Enquiries from "./pages/Enquiries";
 import Analytics from "./pages/Analytics";
 import InternshipApplications from "./pages/InternshipApplications";
 import Careers from "./pages/Careers";
-import PrimePrivacy from "./pages/PrimePrivacy";
-import PrimeTerms from "./pages/PrimeTerms";
-import PrimeDataDeletion from "./pages/PrimeDataDeletion";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -55,23 +44,17 @@ const App = () => (
           <Routes>
             {/* Public pages */}
             <Route path="/" element={<Landing />} />
-            <Route path="/vahanhub" element={<Vahanhub />} />
-            <Route path="/upcurv-ecom" element={<UpcurvEcom />} />
-            <Route path="/upcurv-retail" element={<UpcurvRetail />} />
-            <Route path="/upcurv-prime" element={<UpcurvPrime />} />
-            <Route path="/upcurv-wash" element={<UpcurvWash />} />
             <Route path="/upcurv-halls" element={<UpcurvHalls />} />
-            <Route path="/upcurv-labs" element={<UpcurvLabs />} />
-            <Route path="/blogs" element={<Blogs />} />
+            {['/vahanhub', '/upcurv-ecom', '/upcurv-retail', '/upcurv-prime', '/upcurv-wash', '/upcurv-labs', '/upcurv-prime/privacy', '/upcurv-prime/terms', '/upcurv-prime/data-deletion'].map((path) => (
+              <Route key={path} path={path} element={<Navigate to="/#products" replace />} />
+            ))}
+            <Route path="/blogs" element={<Navigate to="/#resources" replace />} />
             <Route path="/about" element={<About />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/refund" element={<Refund />} />
-            <Route path="/franchise" element={<Franchise />} />
+            <Route path="/franchise" element={<Navigate to="/" replace />} />
             <Route path="/careers" element={<Careers />} />
-            <Route path="/upcurv-prime/privacy" element={<PrimePrivacy />} />
-            <Route path="/upcurv-prime/terms" element={<PrimeTerms />} />
-            <Route path="/upcurv-prime/data-deletion" element={<PrimeDataDeletion />} />
             <Route path="/auth" element={<Auth />} />
             {/* Admin pages */}
             <Route

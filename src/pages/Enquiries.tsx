@@ -33,6 +33,7 @@ const requestTypeLabels: Record<string, string> = {
   complaint: 'Complaint',
   grievance: 'Grievance',
   technical_support: 'Technical Support',
+  custom_saas_discussion: 'Custom SaaS Discussion',
 };
 
 const requestTypeColors: Record<string, string> = {
@@ -41,6 +42,7 @@ const requestTypeColors: Record<string, string> = {
   complaint: 'bg-red-100 text-red-700',
   grievance: 'bg-orange-100 text-orange-700',
   technical_support: 'bg-teal-100 text-teal-700',
+  custom_saas_discussion: 'bg-accent text-accent-foreground',
 };
 
 const Enquiries = () => {
@@ -83,7 +85,7 @@ const Enquiries = () => {
       </div>
 
       <div className="mt-4 flex items-center gap-3 flex-wrap">
-        {['all', 'demo', 'enquiry', 'complaint', 'grievance', 'technical_support'].map(type => (
+        {['all', 'demo', 'custom_saas_discussion', 'enquiry', 'complaint', 'grievance', 'technical_support'].map(type => (
           <Button
             key={type}
             variant={filterType === type ? 'default' : 'outline'}

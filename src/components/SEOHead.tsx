@@ -7,8 +7,7 @@ interface SEOHeadProps {
   image?: string;
 }
 
-const BASE_URL = 'https://solo-chief-suite.lovable.app';
-const DEFAULT_IMAGE = 'https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/974e7914-b48f-4453-8339-226a137afda6/id-preview-56034bc1--acf904b0-014c-4af6-b747-a2918c6b7d4a.lovable.app-1771346529459.png';
+const BASE_URL = 'https://upcurv.in';
 
 export const SEOHead = ({ title, description, path = '/', image }: SEOHeadProps) => {
   useEffect(() => {
@@ -31,11 +30,13 @@ export const SEOHead = ({ title, description, path = '/', image }: SEOHeadProps)
     setMeta('og:description', description, true);
     setMeta('og:type', 'website', true);
     setMeta('og:url', `${BASE_URL}${path}`, true);
-    setMeta('og:image', image || DEFAULT_IMAGE, true);
     setMeta('twitter:card', 'summary_large_image');
     setMeta('twitter:title', fullTitle);
     setMeta('twitter:description', description);
-    setMeta('twitter:image', image || DEFAULT_IMAGE);
+    if (image) {
+      setMeta('og:image', image, true);
+      setMeta('twitter:image', image);
+    }
 
     let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
     if (!canonical) {
