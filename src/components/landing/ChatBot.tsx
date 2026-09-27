@@ -26,30 +26,29 @@ const SESSION_TTL = 10 * 60 * 1000;
 
 const INITIAL_MESSAGE: Message = {
   id: 0, from: 'bot',
-  text: "👋 Hi! I'm the Upcurv Assistant. How can I help you today?",
-  options: ['📱 Product Demo', '❓ Product Enquiry', '🏙️ City Franchise', '🎫 Support Ticket', '📝 Complaint', '⚠️ Grievance', '🔧 Technical Support', '💬 Just browsing'],
+  text: "Hi! What would you like help with?",
+  options: ['Product Demo', 'Custom SaaS', 'Product Enquiry', 'Support Ticket', 'Just browsing'],
 };
 
 const FLOWS: Record<string, Message[]> = {
-  '📱 Product Demo': [{ id: 1, from: 'bot', text: 'Which product are you interested in?', options: ['🚗 Vahanhub', '🛒 Upcurv Ecom', '🏪 Upcurv Retail'] }],
-  '🚗 Vahanhub': [{ id: 2, from: 'bot', text: "Vahanhub helps dealers manage inventory, leads & marketplace. Fill in your details for a free demo.", form: 'demo' }],
-  '🛒 Upcurv Ecom': [{ id: 3, from: 'bot', text: "Launch a branded online store in minutes. Fill in your details!", form: 'demo' }],
-  '🏪 Upcurv Retail': [{ id: 4, from: 'bot', text: "Complete retail billing & management system. Let's schedule your demo!", form: 'demo' }],
-  '❓ Product Enquiry': [{ id: 10, from: 'bot', text: 'Which product would you like to know more about?', options: ['🚗 Vahanhub Enquiry', '🛒 Ecom Enquiry', '🏪 Retail Enquiry'] }],
-  '🚗 Vahanhub Enquiry': [{ id: 11, from: 'bot', text: "Tell us what you'd like to know about Vahanhub:", form: 'enquiry' }],
-  '🛒 Ecom Enquiry': [{ id: 12, from: 'bot', text: "Tell us what you'd like to know about Upcurv Ecom:", form: 'enquiry' }],
-  '🏪 Retail Enquiry': [{ id: 13, from: 'bot', text: "Tell us what you'd like to know about Upcurv Retail:", form: 'enquiry' }],
-  '🏙️ City Franchise': [{ id: 5, from: 'bot', text: "🔥 India's first SaaS City Franchise model. Tell us about yourself:", form: 'franchise' }],
-  '🎫 Support Ticket': [{ id: 6, from: 'bot', text: "Describe your issue and we'll create a support ticket:", form: 'support' }],
-  '📝 Complaint': [{ id: 20, from: 'bot', text: "We're sorry to hear that. Please describe your complaint:", form: 'complaint' }],
-  '⚠️ Grievance': [{ id: 21, from: 'bot', text: "We take grievances seriously. Please share the details:", form: 'grievance' }],
-  '🔧 Technical Support': [{ id: 22, from: 'bot', text: "Please describe the technical issue you're facing:", form: 'technical_support' }],
-  '💬 Just browsing': [{ id: 7, from: 'bot', text: "No problem! Explore our products:\n• /vahanhub – Dealer Management\n• /upcurv-ecom – E-Commerce\n• /upcurv-retail – Retail POS", options: ['📱 Product Demo', '❓ Product Enquiry', '🏙️ City Franchise'] }],
+  'Product Demo': [{ id: 1, from: 'bot', text: 'Which product are you interested in?', options: ['Upcurv Trade', 'Upcurv Prints', 'Upcurv Halls'] }],
+  'Upcurv Trade': [{ id: 2, from: 'bot', text: 'Tell us where trade operations are slowing you down.', form: 'demo' }],
+  'Upcurv Prints': [{ id: 3, from: 'bot', text: 'Tell us about your print shop and current order workflow.', form: 'demo' }],
+  'Upcurv Halls': [{ id: 4, from: 'bot', text: 'Tell us about your venue and booking workflow.', form: 'demo' }],
+  'Custom SaaS': [{ id: 5, from: 'bot', text: 'Tell us what you are managing manually today.', form: 'custom_saas_discussion' }],
+  'Product Enquiry': [{ id: 10, from: 'bot', text: 'Which product would you like to know more about?', options: ['UpcurvHub Enquiry', 'Trade Enquiry', 'Prints Enquiry', 'Halls Enquiry'] }],
+  'UpcurvHub Enquiry': [{ id: 11, from: 'bot', text: "Tell us what you'd like to know about UpcurvHub:", form: 'enquiry' }],
+  'Trade Enquiry': [{ id: 12, from: 'bot', text: "Tell us what you'd like to know about Upcurv Trade:", form: 'enquiry' }],
+  'Prints Enquiry': [{ id: 13, from: 'bot', text: "Tell us what you'd like to know about Upcurv Prints:", form: 'enquiry' }],
+  'Halls Enquiry': [{ id: 14, from: 'bot', text: "Tell us what you'd like to know about Upcurv Halls:", form: 'enquiry' }],
+  'Support Ticket': [{ id: 6, from: 'bot', text: "Describe your issue and we'll create a support ticket:", form: 'support' }],
+  'Just browsing': [{ id: 7, from: 'bot', text: 'Explore Upcurv Trade, Upcurv Prints, UpcurvHub, Custom SaaS and Upcurv Halls.', options: ['Product Demo', 'Custom SaaS', 'Product Enquiry'] }],
 };
 
 const PRODUCT_MAP: Record<string, string> = {
-  '🚗 Vahanhub': 'vahanhub', '🛒 Upcurv Ecom': 'upcurv_ecom', '🏪 Upcurv Retail': 'upcurv_retail',
-  '🚗 Vahanhub Enquiry': 'vahanhub', '🛒 Ecom Enquiry': 'upcurv_ecom', '🏪 Retail Enquiry': 'upcurv_retail',
+  'Upcurv Trade': 'upcurv_trade', 'Upcurv Prints': 'upcurv_prints', 'Upcurv Halls': 'upcurv_halls',
+  'Custom SaaS': 'custom_saas', 'UpcurvHub Enquiry': 'upcurvhub', 'Trade Enquiry': 'upcurv_trade',
+  'Prints Enquiry': 'upcurv_prints', 'Halls Enquiry': 'upcurv_halls',
 };
 
 const emptyForm = (): FormState => ({ name: '', phone: '', email: '', business_name: '', city: '', message: '' });
@@ -162,7 +161,7 @@ export const ChatBot = () => {
   const renderForm = (type: string) => {
     const isTicketType = ['support', 'complaint', 'grievance', 'technical_support'].includes(type);
     const titles: Record<string, string> = {
-      demo: 'Quick Request Form', enquiry: 'Product Enquiry', franchise: 'Franchise Enquiry',
+      demo: 'Quick Request Form', enquiry: 'Product Enquiry', custom_saas_discussion: 'Custom SaaS Discussion', franchise: 'Franchise Enquiry',
       support: 'Support Ticket', complaint: 'File Complaint', grievance: 'File Grievance', technical_support: 'Technical Support',
     };
     return (
@@ -181,9 +180,9 @@ export const ChatBot = () => {
           </>
         )}
         <textarea className="w-full border border-border rounded-lg px-2 py-1.5 text-sm focus:outline-none focus:ring-1 focus:ring-[#F9423A] resize-none" placeholder={isTicketType ? 'Describe your issue *' : 'Message (optional)'} rows={2} value={form.message} onChange={e => setForm(p => ({ ...p, message: e.target.value }))} maxLength={1000} />
-        <button onClick={() => submitForm(type)} disabled={loading} className="w-full bg-[#F9423A] text-white rounded-lg py-1.5 text-sm font-medium hover:bg-[#e03830] transition-colors disabled:opacity-60 flex items-center justify-center gap-2">
+        <Button onClick={() => submitForm(type)} disabled={loading} className="w-full">
           {loading ? <Loader2 className="h-3 w-3 animate-spin" /> : null} Submit
-        </button>
+        </Button>
       </div>
     );
   };
