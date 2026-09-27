@@ -14,7 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Inter', 'Roboto', 'system-ui', 'sans-serif'],
+        sans: ['Manrope', 'system-ui', 'sans-serif'],
+        display: ['Space Grotesk', 'Manrope', 'system-ui', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -79,6 +80,13 @@ export default {
           "3": "hsl(var(--chart-3))",
           "4": "hsl(var(--chart-4))",
           "5": "hsl(var(--chart-5))",
+        },
+        solution: {
+          hub: "hsl(var(--solution-hub))",
+          prints: "hsl(var(--solution-prints))",
+          trade: "hsl(var(--solution-trade))",
+          saas: "hsl(var(--solution-saas))",
+          halls: "hsl(var(--solution-halls))",
         },
       },
       borderRadius: {

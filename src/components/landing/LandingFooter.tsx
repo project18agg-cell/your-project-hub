@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { UpcurvLogo } from './UpcurvLogo';
-import { MapPin, Phone, Mail } from 'lucide-react';
+import { MapPin, Phone, Mail, ArrowUpRight } from 'lucide-react';
+import { externalDestinations } from '@/lib/publicSolutions';
 
 const FacebookIcon = () => (
   <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
@@ -14,7 +15,7 @@ const LinkedInIcon = () => (
 
 export const LandingFooter = () => {
   return (
-    <footer id="contact" className="bg-foreground text-white">
+    <footer id="contact" className="bg-foreground text-primary-foreground">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-10">
           <div className="md:col-span-2">
@@ -22,20 +23,20 @@ export const LandingFooter = () => {
               <UpcurvLogo size={36} />
               <span className="text-xl font-bold">Upcurv</span>
             </div>
-            <p className="text-sm text-white/60 mb-4">
-              Powering modern businesses with cloud-based growth systems.
+             <p className="text-sm text-primary-foreground/60 mb-4 max-w-sm">
+               Digital products and custom business software built around how your business actually works.
             </p>
-            <div className="space-y-2 text-sm text-white/60">
+             <div className="space-y-2 text-sm text-primary-foreground/60">
               <div className="flex items-start gap-2">
-                <MapPin className="h-4 w-4 mt-0.5 shrink-0 text-[#F9423A]" />
+                 <MapPin className="h-4 w-4 mt-0.5 shrink-0 text-primary" />
                 <span>Upcurv Innovations Pvt. Ltd.<br />Coimbatore, Tamil Nadu, India</span>
               </div>
               <div className="flex items-center gap-2">
-                <Phone className="h-4 w-4 shrink-0 text-[#F9423A]" />
+                 <Phone className="h-4 w-4 shrink-0 text-primary" />
                 <span>+91 8807858256</span>
               </div>
               <div className="flex items-center gap-2">
-                <Mail className="h-4 w-4 shrink-0 text-[#F9423A]" />
+                 <Mail className="h-4 w-4 shrink-0 text-primary" />
                 <span>upcurvinnovations@gmail.com</span>
               </div>
             </div>
@@ -46,7 +47,7 @@ export const LandingFooter = () => {
                 { icon: <InstagramIcon />, href: 'https://instagram.com' },
                 { icon: <LinkedInIcon />, href: 'https://linkedin.com' },
               ].map((social, i) => (
-                <a key={i} href={social.href} target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-lg bg-white/10 hover:bg-[#F9423A] flex items-center justify-center text-white/70 hover:text-white transition-colors">
+                 <a key={i} href={social.href} target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-lg bg-primary-foreground/10 hover:bg-primary flex items-center justify-center text-primary-foreground/70 hover:text-primary-foreground transition-colors">
                   {social.icon}
                 </a>
               ))}
@@ -55,31 +56,29 @@ export const LandingFooter = () => {
 
           <div>
             <h4 className="font-semibold mb-4">Products</h4>
-            <ul className="space-y-2 text-sm text-white/60">
-              <li><Link to="/vahanhub" className="hover:text-white transition-colors">Vahanhub</Link></li>
-              <li><Link to="/upcurv-ecom" className="hover:text-white transition-colors">Upcurv Ecom</Link></li>
-              <li><Link to="/upcurv-retail" className="hover:text-white transition-colors">Upcurv Retail</Link></li>
-              <li><Link to="/upcurv-prime" className="hover:text-white transition-colors">Upcurv Prime</Link></li>
-              <li><Link to="/upcurv-wash" className="hover:text-white transition-colors">Upcurv Wash</Link></li>
-              <li><Link to="/upcurv-halls" className="hover:text-white transition-colors">Upcurv Halls</Link></li>
-              <li><Link to="/upcurv-labs" className="hover:text-white transition-colors">Upcurv Labs</Link></li>
+             <ul className="space-y-2 text-sm text-primary-foreground/60">
+               <li><a href={externalDestinations.trade} className="hover:text-primary-foreground transition-colors inline-flex gap-1">Upcurv Trade <ArrowUpRight className="h-3 w-3" /></a></li>
+               <li><a href={externalDestinations.prints} className="hover:text-primary-foreground transition-colors inline-flex gap-1">Upcurv Prints <ArrowUpRight className="h-3 w-3" /></a></li>
+               <li><a href={externalDestinations.hub} className="hover:text-primary-foreground transition-colors inline-flex gap-1">UpcurvHub <ArrowUpRight className="h-3 w-3" /></a></li>
+               <li><a href="/#custom-saas" className="hover:text-primary-foreground transition-colors">Custom SaaS</a></li>
+               <li><Link to="/upcurv-halls" className="hover:text-primary-foreground transition-colors">Upcurv Halls</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-semibold mb-4">Company</h4>
-            <ul className="space-y-2 text-sm text-white/60">
-              <li><Link to="/franchise" className="hover:text-white transition-colors">Franchise Program</Link></li>
-              <li><Link to="/careers" className="hover:text-white transition-colors">Careers</Link></li>
-              <li><Link to="/about" className="hover:text-white transition-colors">About Us</Link></li>
-              <li><Link to="/blogs" className="hover:text-white transition-colors">Blog</Link></li>
-              <li><a href="/#contact" className="hover:text-white transition-colors">Contact</a></li>
+             <ul className="space-y-2 text-sm text-primary-foreground/60">
+               <li><Link to="/about" className="hover:text-primary-foreground transition-colors">About</Link></li>
+               <li><Link to="/careers" className="hover:text-primary-foreground transition-colors">Careers</Link></li>
+               <li><Link to="/blogs" className="hover:text-primary-foreground transition-colors">Resources</Link></li>
+               <li><Link to="/franchise" className="hover:text-primary-foreground transition-colors">Franchise</Link></li>
+               <li><a href="tel:+918807858256" className="hover:text-primary-foreground transition-colors">Talk to Us</a></li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-semibold mb-4">Legal</h4>
-            <ul className="space-y-2 text-sm text-white/60">
+             <ul className="space-y-2 text-sm text-primary-foreground/60">
               <li><Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
               <li><Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link></li>
               <li><Link to="/refund" className="hover:text-white transition-colors">Refund Policy</Link></li>
@@ -87,7 +86,7 @@ export const LandingFooter = () => {
           </div>
         </div>
 
-        <div className="border-t border-white/10 mt-12 pt-8 text-center text-sm text-white/40">
+         <div className="border-t border-primary-foreground/10 mt-12 pt-8 text-center text-sm text-primary-foreground/40">
           © {new Date().getFullYear()} Upcurv Innovations Pvt. Ltd. All rights reserved.
         </div>
       </div>
