@@ -10,8 +10,6 @@ import { ScrollToTop } from "@/components/ScrollToTop";
 import Auth from "./pages/Auth";
 import Landing from "./pages/Landing";
 import UpcurvHalls from "./pages/UpcurvHalls";
-import Blogs from "./pages/Blogs";
-import Franchise from "./pages/Franchise";
 import About from "./pages/About";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
@@ -50,12 +48,12 @@ const App = () => (
             {['/vahanhub', '/upcurv-ecom', '/upcurv-retail', '/upcurv-prime', '/upcurv-wash', '/upcurv-labs', '/upcurv-prime/privacy', '/upcurv-prime/terms', '/upcurv-prime/data-deletion'].map((path) => (
               <Route key={path} path={path} element={<Navigate to="/#products" replace />} />
             ))}
-            <Route path="/blogs" element={<Blogs />} />
+            <Route path="/blogs" element={<Navigate to="/#resources" replace />} />
             <Route path="/about" element={<About />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/refund" element={<Refund />} />
-            <Route path="/franchise" element={<Franchise />} />
+            <Route path="/franchise" element={<Navigate to="/" replace />} />
             <Route path="/careers" element={<Careers />} />
             <Route path="/auth" element={<Auth />} />
             {/* Admin pages */}

@@ -71,7 +71,6 @@ export const LandingFooter = () => {
                <li><Link to="/about" className="hover:text-primary-foreground transition-colors">About</Link></li>
                <li><Link to="/careers" className="hover:text-primary-foreground transition-colors">Careers</Link></li>
                <li><Link to="/blogs" className="hover:text-primary-foreground transition-colors">Resources</Link></li>
-               <li><Link to="/franchise" className="hover:text-primary-foreground transition-colors">Franchise</Link></li>
                <li><a href="tel:+918807858256" className="hover:text-primary-foreground transition-colors">Talk to Us</a></li>
             </ul>
           </div>
