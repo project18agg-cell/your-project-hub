@@ -11,6 +11,7 @@ import {
   ArrowRight, TrendingUp, ClipboardList, Building
 } from 'lucide-react';
 import hallsHero from '@/assets/halls-hero.png';
+import { publicPricing } from '@/lib/publicSolutions';
 
 const PRIMARY = '#E8A0BF';
 const DARK_PINK = '#C4739E';
@@ -179,8 +180,8 @@ const UpcurvHalls = () => (
           <div className="bg-white rounded-2xl border-2 p-6 sm:p-8 shadow-xl relative" style={{ borderColor: DARK_PINK }}>
             <div className="absolute -top-3 left-1/2 -translate-x-1/2 text-white text-xs font-bold px-4 py-1 rounded-full" style={{ backgroundColor: DARK_PINK }}>BEST VALUE</div>
             <h3 className="text-xl sm:text-2xl font-bold text-center" style={{ color: TEXT_DARK }}>Upcurv Halls Pro</h3>
-            <div className="text-center mt-4"><span className="text-4xl sm:text-5xl font-black" style={{ color: DARK_PINK }}>₹1,499</span><span style={{ color: '#888' }}>/month</span></div>
-            <p className="text-sm text-center mt-2" style={{ color: '#888' }}>Per venue • Billed monthly</p>
+            <div className="text-center mt-4"><span className="text-lg line-through mr-2" style={{ color: '#888' }}>{publicPricing.halls.previousPrice}</span><span className="text-4xl sm:text-5xl font-black" style={{ color: DARK_PINK }}>{publicPricing.halls.price}</span></div>
+            <p className="text-sm text-center mt-2" style={{ color: '#888' }}>Per venue • Billed yearly</p>
             <ul className="mt-6 space-y-2 sm:space-y-3">
               {['Booking Calendar & Management', 'Multiple Hall Support', 'Catering Package Builder', 'Event Add-on Services', 'Payment & Deposit Tracking', 'Guest Management', 'WhatsApp Notifications', 'Revenue Analytics', 'Photo Gallery', 'Priority Support'].map(f => (
                 <li key={f} className="flex items-center gap-2 text-xs sm:text-sm" style={{ color: TEXT_DARK }}><CheckCircle2 className="h-4 w-4 shrink-0" style={{ color: DARK_PINK }} />{f}</li>

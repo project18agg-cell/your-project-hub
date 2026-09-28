@@ -6,9 +6,9 @@ import { UpcurvLogo } from './UpcurvLogo';
 
 const navLinks = [
   { href: '/#products', label: 'Products' },
-  { href: '/#custom-saas', label: 'Custom SaaS' },
+  { href: '/custom-saas', label: 'Custom SaaS' },
   { href: '/#solutions', label: 'Solutions' },
-  { href: '/#pricing', label: 'Pricing' },
+  { href: '/pricing', label: 'Pricing' },
   { href: '/#resources', label: 'Resources' },
 ];
 
@@ -53,7 +53,7 @@ export const LandingNavbar = ({ logoColor }: { logoColor?: string }) => {
           <div className="hidden lg:flex items-center gap-3">
             <Button variant="ghost" asChild><a href="tel:+918807858256">Talk to Us</a></Button>
             <Button asChild>
-              <a href="/#custom-saas-form">Get Started <ArrowUpRight /></a>
+              <Link to="/custom-saas">Get Started <ArrowUpRight /></Link>
             </Button>
           </div>
 
@@ -77,7 +77,7 @@ export const LandingNavbar = ({ logoColor }: { logoColor?: string }) => {
             ))}
             <div className="grid grid-cols-2 gap-2 pt-3">
               <Button variant="outline" asChild><a href="tel:+918807858256">Talk to Us</a></Button>
-              <Button asChild><a href="/#custom-saas-form" onClick={() => setMobileOpen(false)}>Get Started</a></Button>
+              <Button asChild><Link to="/custom-saas" onClick={() => setMobileOpen(false)}>Get Started</Link></Button>
             </div>
           </div>
         )}
