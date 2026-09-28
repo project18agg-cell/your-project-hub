@@ -2,8 +2,19 @@ import { Building2, CarFront, ChartNoAxesCombined, Printer, Sparkles } from 'luc
 
 export const externalDestinations = {
   hub: 'https://upcurvhub.upcurv.in',
-  trade: 'https://upcurvtrades.upcurv.in',
+  trade: 'https://upcurvtrade.upcurv.in',
   prints: 'https://upcurvprints.upcurv.in',
+} as const;
+
+export const publicPricing = {
+  hub: {
+    lister: { price: '₹999', term: '3 months', previousPrice: '₹1,197' },
+    complete: { price: '₹2,999', term: '3 months', previousPrice: '₹3,597' },
+  },
+  trade: { price: 'Free', note: 'Promoted and top-featured placement is custom-priced.' },
+  prints: { featured: '₹999–₹1,999/month', verified: '₹199/month' },
+  customSaas: { price: '₹699/month' },
+  halls: { price: '₹4,999/year', previousPrice: '₹6,999/year' },
 } as const;
 
 export const publicSolutions = [
@@ -34,14 +45,14 @@ export const publicSolutions = [
   {
     key: 'upcurv_trade',
     name: 'Upcurv Trade',
-    eyebrow: 'Trade operations',
-    prompt: 'Manage trade and operations',
-    description: 'Digitise daily workflows and improve visibility across your business.',
-    action: 'Request a demo',
+    eyebrow: 'B2B and D2C marketplace',
+    prompt: 'Connect your business to more opportunities',
+    description: 'A B2B and D2C platform connecting buyers, suppliers, customers and service businesses across a wide range of categories.',
+    action: 'Explore Upcurv Trade',
     href: externalDestinations.trade,
     icon: ChartNoAxesCombined,
     tone: 'trade',
-    workflow: ['Capture', 'Coordinate', 'Track'],
+    workflow: ['List', 'Connect', 'Trade'],
   },
   {
     key: 'custom_saas',
@@ -50,7 +61,7 @@ export const publicSolutions = [
     prompt: 'Need software built for you?',
     description: "Tell us how your business works. We'll design software around your workflow.",
     action: 'Talk to an expert',
-    href: '/#custom-saas-form',
+    href: '/custom-saas',
     icon: Sparkles,
     tone: 'saas',
     workflow: ['Map workflow', 'Build system', 'Improve monthly'],
