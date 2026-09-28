@@ -60,7 +60,7 @@ export const LandingFooter = () => {
                <li><a href={externalDestinations.trade} className="hover:text-primary-foreground transition-colors inline-flex gap-1">Upcurv Trade <ArrowUpRight className="h-3 w-3" /></a></li>
                <li><a href={externalDestinations.prints} className="hover:text-primary-foreground transition-colors inline-flex gap-1">Upcurv Prints <ArrowUpRight className="h-3 w-3" /></a></li>
                <li><a href={externalDestinations.hub} className="hover:text-primary-foreground transition-colors inline-flex gap-1">UpcurvHub <ArrowUpRight className="h-3 w-3" /></a></li>
-               <li><a href="/#custom-saas" className="hover:text-primary-foreground transition-colors">Custom SaaS</a></li>
+               <li><Link to="/custom-saas" className="hover:text-primary-foreground transition-colors">Custom SaaS</Link></li>
                <li><Link to="/upcurv-halls" className="hover:text-primary-foreground transition-colors">Upcurv Halls</Link></li>
             </ul>
           </div>
@@ -70,6 +70,7 @@ export const LandingFooter = () => {
              <ul className="space-y-2 text-sm text-primary-foreground/60">
                <li><Link to="/about" className="hover:text-primary-foreground transition-colors">About</Link></li>
                <li><Link to="/careers" className="hover:text-primary-foreground transition-colors">Careers</Link></li>
+               <li><Link to="/pricing" className="hover:text-primary-foreground transition-colors">Pricing</Link></li>
                <li><Link to="/blogs" className="hover:text-primary-foreground transition-colors">Resources</Link></li>
                <li><a href="tel:+918807858256" className="hover:text-primary-foreground transition-colors">Talk to Us</a></li>
             </ul>

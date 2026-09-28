@@ -69,13 +69,14 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       }
     );
 
-    // THEN check initial session
-    supabase.auth.getSession().then(async ({ data: { session } }) => {
+    // Revalidate the current user with the Auth server before trusting access.
+    supabase.auth.getUser().then(async ({ data: { user } }) => {
+      const { data: { session } } = await supabase.auth.getSession();
       setSession(session);
-      setUser(session?.user ?? null);
+      setUser(user);
 
-      if (session?.user) {
-        const adminStatus = await checkAdminRole(session.user.id);
+      if (user) {
+        const adminStatus = await checkAdminRole(user.id);
         setIsAdmin(adminStatus);
       }
       setIsLoading(false);
