@@ -8,7 +8,7 @@ import {
 import { LandingNavbar } from '@/components/landing/LandingNavbar';
 import { LandingFooter } from '@/components/landing/LandingFooter';
 import { ChatBot } from '@/components/landing/ChatBot';
-import { CustomSaasForm } from '@/components/landing/CustomSaasForm';
+import { CustomSaasPopup } from '@/components/landing/CustomSaasPopup';
 import { SEOHead } from '@/components/SEOHead';
 import { PageViewTracker } from '@/components/landing/PageViewTracker';
 import { Button } from '@/components/ui/button';
@@ -27,7 +27,7 @@ const buildTypes = [
 const businessTypes = ['Retail', 'Manufacturing', 'Services', 'Real Estate', 'Automotive', 'Education', 'Other'];
 
 const recommendations: Record<string, { title: string; copy: string; href: string; action: string }> = {
-  Retail: { title: 'Start with Upcurv Trade', copy: 'Bring stock, orders and everyday operations into one clearer workflow.', href: 'https://upcurvtrades.upcurv.in', action: 'Request a demo' },
+  Retail: { title: 'Start with Upcurv Trade', copy: 'Bring stock, orders and everyday operations into one clearer workflow.', href: 'https://upcurvtrade.upcurv.in', action: 'Request a demo' },
   Manufacturing: { title: 'Build a custom operations system', copy: 'Map production, inventory, approvals and reporting around your actual process.', href: '#custom-saas-form', action: 'Discuss my workflow' },
   Services: { title: 'Build a custom service platform', copy: 'Connect leads, jobs, teams, customers and billing without stitching together generic tools.', href: '#custom-saas-form', action: 'Discuss my workflow' },
   'Real Estate': { title: 'Build a property workflow', copy: 'Create one tailored system for leads, properties, visits, documents and follow-ups.', href: '#custom-saas-form', action: 'Discuss my workflow' },
@@ -64,7 +64,7 @@ const Landing = () => {
                 <Sparkles className="h-3.5 w-3.5 text-primary" /> Built for real business workflows
               </div>
               <h1 className="max-w-3xl font-display text-4xl font-bold leading-[1.04] sm:text-5xl lg:text-6xl xl:text-7xl">
-                Software that fits your business—<span className="text-primary">not the other way around.</span>
+                Less chasing, more growing. <span className="text-primary">Tools that keep your business moving.</span>
               </h1>
               <p className="mt-6 max-w-xl text-base leading-7 text-muted-foreground sm:text-lg">
                 From ready-to-use products to custom business systems, Upcurv helps businesses simplify operations, reduce manual work and move faster.
@@ -102,7 +102,7 @@ const Landing = () => {
 
         <section id="products" className="scroll-mt-20 py-16 sm:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="max-w-2xl"><p className="text-sm font-bold uppercase text-primary">Find your route</p><h2 className="mt-3 font-display text-3xl font-bold sm:text-5xl">What are you trying to solve?</h2><p className="mt-4 text-muted-foreground">Start with the outcome you need. We’ll show you the most useful next step.</p></div>
+            <div className="max-w-2xl"><p className="text-sm font-bold uppercase text-primary">Our Products</p><h2 className="mt-3 font-display text-3xl font-bold sm:text-5xl">Our Products</h2><p className="mt-4 text-muted-foreground">Digital products built for real businesses — pick the one that fits your work.</p></div>
             <div className="mt-10 grid gap-4 md:grid-cols-2">
               {productSolutions.map((solution) => (
                 <a key={solution.key} href={solution.href} className="group border border-border bg-card p-5 transition-all hover:-translate-y-1 hover:shadow-lg sm:p-7">
@@ -151,12 +151,6 @@ const Landing = () => {
           </div>
         </section>
 
-        <section id="custom-saas-form" className="scroll-mt-20 py-16 sm:py-24">
-          <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.72fr_1.28fr] lg:px-8">
-            <div><p className="text-sm font-bold uppercase text-primary">Tell us what you’re improving</p><h2 className="mt-3 font-display text-3xl font-bold sm:text-4xl">Start with your workflow, not a feature list.</h2><p className="mt-4 text-muted-foreground">A few practical details help our team prepare a useful first conversation.</p></div>
-            <div className="border border-border bg-card p-5 shadow-sm sm:p-8"><CustomSaasForm /></div>
-          </div>
-        </section>
 
         <section id="resources" className="scroll-mt-20 border-t border-border py-14">
           <div className="mx-auto flex max-w-7xl flex-col justify-between gap-6 px-4 sm:flex-row sm:items-center sm:px-6 lg:px-8"><div><p className="text-sm font-bold uppercase text-primary">Resources</p><h2 className="mt-2 font-display text-2xl font-bold">Practical thinking for growing businesses.</h2><p className="mt-2 text-sm text-muted-foreground">Workflow guides and useful business software insights are coming soon.</p></div><Button variant="outline" asChild><a href="tel:+918807858256">Ask our team <ArrowRight /></a></Button></div>
@@ -165,6 +159,7 @@ const Landing = () => {
 
       <LandingFooter />
       <ChatBot />
+      <CustomSaasPopup />
     </div>
   );
 };
