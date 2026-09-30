@@ -10,3 +10,8 @@
 - [x] Move Custom SaaS qualification into a delayed popup.
 - [ ] Repair and verify admin sign-in against the connected Supabase project.
 - [ ] Verify desktop/mobile presentation, links, popup, and build health.
+- [x] SEO basics: sitemap, robots, brand name, About/Careers meta, Organization schema.
+- [x] Custom SaaS keyword rewrite + FAQs + schema; CRM/inventory/property use-case pages.
+- [ ] Pre-rendering (needs TanStack Start migration — user decision).
+- [ ] Industry pages, /blog, case studies (need real content/permission from user).
+- [ ] Real social profile links and share image (need from user).
