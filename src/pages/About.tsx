@@ -59,6 +59,7 @@ const timeline = [
 
 const About = () => (
   <div className="min-h-screen bg-white">
+      <SEOHead title="About Upcurv Innovations" description="Upcurv Innovations is a Coimbatore-based company building digital products and affordable custom business software for growing Indian businesses." path="/about" />
     <PageViewTracker title="About Us" />
     <LandingNavbar />
 

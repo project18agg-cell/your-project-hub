@@ -102,7 +102,7 @@ const Careers = () => {
 
   return (
     <>
-      <SEOHead title="Careers & Internships | Upcurv" description="Join Upcurv as a student intern. Explore openings in development, design, marketing & business development." />
+      <SEOHead title="Careers & Internships" path="/careers" description="Join Upcurv as a student intern. Explore openings in development, design, marketing & business development." />
       <PageViewTracker title="Careers" />
       <LandingNavbar />
 

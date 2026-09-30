@@ -5,13 +5,15 @@ interface SEOHeadProps {
   description: string;
   path?: string;
   image?: string;
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
 const BASE_URL = 'https://upcurv.in';
+const BRAND = 'Upcurv Innovations';
 
-export const SEOHead = ({ title, description, path = '/', image }: SEOHeadProps) => {
+export const SEOHead = ({ title, description, path = '/', image, jsonLd }: SEOHeadProps) => {
   useEffect(() => {
-    const fullTitle = `${title} | Upcurv Technologies`;
+    const fullTitle = title.includes('Upcurv') ? title : `${title} | ${BRAND}`;
     document.title = fullTitle;
 
     const setMeta = (name: string, content: string, isProperty = false) => {
@@ -45,7 +47,16 @@ export const SEOHead = ({ title, description, path = '/', image }: SEOHeadProps)
       document.head.appendChild(canonical);
     }
     canonical.href = `${BASE_URL}${path}`;
-  }, [title, description, path, image]);
+
+    document.querySelectorAll('script[data-page-jsonld]').forEach((el) => el.remove());
+    if (jsonLd) {
+      const script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.dataset.pageJsonld = 'true';
+      script.textContent = JSON.stringify(jsonLd);
+      document.head.appendChild(script);
+    }
+  }, [title, description, path, image, jsonLd]);
 
   return null;
 };
