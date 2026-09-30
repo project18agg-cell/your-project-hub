@@ -1,14 +1,19 @@
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
-
 User-agent: *
 Allow: /
+Disallow: /auth
+Disallow: /dashboard
+Disallow: /customers
+Disallow: /products
+Disallow: /subscriptions
+Disallow: /partners
+Disallow: /tickets
+Disallow: /revenue
+Disallow: /expenses
+Disallow: /reports
+Disallow: /leads
+Disallow: /enquiries
+Disallow: /analytics
+Disallow: /internship-applications
+Disallow: /logs
+
+Sitemap: https://upcurv.in/sitemap.xml
