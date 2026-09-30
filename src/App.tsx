@@ -11,6 +11,8 @@ import Auth from "./pages/Auth";
 import Landing from "./pages/Landing";
 import CustomSaas from "./pages/CustomSaas";
 import PricingPage from "./pages/Pricing";
+import UseCase from "./pages/UseCase";
+import { useCasePages } from "@/lib/useCasePages";
 import UpcurvHalls from "./pages/UpcurvHalls";
 import About from "./pages/About";
 import Privacy from "./pages/Privacy";
@@ -48,6 +50,9 @@ const App = () => (
             <Route path="/" element={<Landing />} />
             <Route path="/custom-saas" element={<CustomSaas />} />
             <Route path="/pricing" element={<PricingPage />} />
+            {useCasePages.map((page) => (
+              <Route key={page.slug} path={`/${page.slug}`} element={<UseCase page={page} />} />
+            ))}
             <Route path="/upcurv-halls" element={<UpcurvHalls />} />
             {['/vahanhub', '/upcurv-ecom', '/upcurv-retail', '/upcurv-prime', '/upcurv-wash', '/upcurv-labs', '/upcurv-prime/privacy', '/upcurv-prime/terms', '/upcurv-prime/data-deletion'].map((path) => (
               <Route key={path} path={path} element={<Navigate to="/#products" replace />} />
