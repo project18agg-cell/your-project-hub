@@ -40,18 +40,6 @@ export const LandingFooter = () => {
                 <span>upcurvinnovations@gmail.com</span>
               </div>
             </div>
-            {/* Social Icons */}
-            <div className="flex gap-3 mt-5">
-              {[
-                { icon: <FacebookIcon />, href: 'https://facebook.com' },
-                { icon: <InstagramIcon />, href: 'https://instagram.com' },
-                { icon: <LinkedInIcon />, href: 'https://linkedin.com' },
-              ].map((social, i) => (
-                 <a key={i} href={social.href} target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-lg bg-primary-foreground/10 hover:bg-primary flex items-center justify-center text-primary-foreground/70 hover:text-primary-foreground transition-colors">
-                  {social.icon}
-                </a>
-              ))}
-            </div>
           </div>
 
           <div>
