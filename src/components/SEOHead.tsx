@@ -11,7 +11,7 @@ const BASE_URL = 'https://upcurv.in';
 
 export const SEOHead = ({ title, description, path = '/', image }: SEOHeadProps) => {
   useEffect(() => {
-    const fullTitle = `${title} | Upcurv Technologies`;
+    const fullTitle = `${title} | Upcurv Innovations`;
     document.title = fullTitle;
 
     const setMeta = (name: string, content: string, isProperty = false) => {

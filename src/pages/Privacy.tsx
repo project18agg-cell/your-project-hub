@@ -4,7 +4,7 @@ import { SEOHead } from '@/components/SEOHead';
 
 const Privacy = () => (
   <div className="min-h-screen bg-white">
-    <SEOHead title="Privacy Policy" description="Upcurv Technologies privacy policy — how we collect, use, and protect your information." path="/privacy" />
+    <SEOHead title="Privacy Policy" description="Upcurv Innovations privacy policy — how we collect, use, and protect your information." path="/privacy" />
     <LandingNavbar />
     <section className="py-16">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 prose prose-sm">

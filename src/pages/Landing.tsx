@@ -118,21 +118,6 @@ const Landing = () => {
           </div>
         </section>
 
-        <section id="custom-saas" className="scroll-mt-20 bg-foreground py-16 text-primary-foreground sm:py-24">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
-              <div><p className="text-sm font-bold uppercase text-primary">Custom SaaS</p><h2 className="mt-4 font-display text-3xl font-bold sm:text-5xl">Your business is unique. Your software can be too.</h2><p className="mt-6 max-w-xl text-base leading-7 text-primary-foreground/65">Stop forcing your workflow into generic software. We build web applications, dashboards and business management systems around the way your company actually operates.</p></div>
-              <div className="grid grid-cols-2 gap-px bg-primary-foreground/15">
-                {[
-                  ['01', 'Tell us the problem'], ['02', 'We map your workflow'],
-                  ['03', 'We build the system'], ['04', 'You use it monthly'],
-                ].map(([number, label]) => <div key={number} className="bg-foreground p-5 sm:p-7"><p className="font-display text-3xl font-bold text-primary">{number}</p><p className="mt-4 text-sm font-semibold">{label}</p></div>)}
-              </div>
-            </div>
-            <div className="mt-16 border-t border-primary-foreground/15 pt-12"><p className="text-sm font-bold uppercase text-primary">What can we build?</p><div className="mt-6 grid grid-cols-2 gap-px bg-primary-foreground/15 md:grid-cols-3 lg:grid-cols-4">{buildTypes.map((item) => <div key={item} className="flex min-h-24 items-end bg-foreground p-4 text-sm font-semibold sm:p-5"><Check className="mr-2 h-4 w-4 shrink-0 text-primary" />{item}</div>)}</div><div className="mt-8 flex flex-col justify-between gap-4 sm:flex-row sm:items-center"><p className="text-primary-foreground/65">Don’t see your workflow? Tell us what you’re currently managing manually.</p><Button asChild><a href="/custom-saas#discussion">Discuss my workflow <MoveRight /></a></Button></div></div>
-          </div>
-        </section>
-
         <section id="pricing" className="scroll-mt-20 border-b border-border py-16 sm:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">

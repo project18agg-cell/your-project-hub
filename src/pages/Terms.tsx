@@ -4,7 +4,7 @@ import { SEOHead } from '@/components/SEOHead';
 
 const Terms = () => (
   <div className="min-h-screen bg-white">
-    <SEOHead title="Terms of Service" description="Terms of service for Upcurv Technologies SaaS products and services." path="/terms" />
+    <SEOHead title="Terms of Service" description="Terms of service for Upcurv Innovations SaaS products and services." path="/terms" />
     <LandingNavbar />
     <section className="py-16">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 prose prose-sm">

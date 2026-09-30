@@ -4,7 +4,7 @@ import { SEOHead } from '@/components/SEOHead';
 
 const Refund = () => (
   <div className="min-h-screen bg-white">
-    <SEOHead title="Refund Policy" description="Upcurv Technologies refund policy for SaaS subscriptions." path="/refund" />
+    <SEOHead title="Refund Policy" description="Upcurv Innovations refund policy for SaaS subscriptions." path="/refund" />
     <LandingNavbar />
     <section className="py-16">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 prose prose-sm">
