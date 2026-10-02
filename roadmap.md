@@ -15,3 +15,8 @@
 - [ ] Pre-rendering (needs TanStack Start migration — user decision).
 - [ ] Industry pages, /blog, case studies (need real content/permission from user).
 - [ ] Real social profile links and share image (need from user).
+- [ ] Fix mobile product-card labels so every workflow step remains readable.
+- [ ] Add the confirmed Instagram profile across public social metadata and footer links.
+- [ ] Build the /blog index, category navigation, article routes, internal links, sitemap entries, and article structured data.
+- [ ] Add a marriage-hall before/after workflow comparison slider to Custom SaaS.
+- [ ] Verify the updated public pages on mobile and desktop.
