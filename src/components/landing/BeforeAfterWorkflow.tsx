@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import { AlertTriangle, CalendarCheck, Check, CircleIndianRupee, ClipboardCheck, MessageSquareWarning } from 'lucide-react';
+import { AlertTriangle, CalendarCheck, Check, IndianRupee, ClipboardCheck, MessageSquareWarning } from 'lucide-react';
 
 const beforeItems = [
   [MessageSquareWarning, 'Enquiries get buried', 'Calls and WhatsApp messages stay with different people.'],
   [AlertTriangle, 'Dates can collide', 'Paper diaries and separate calendars show different availability.'],
-  [CircleIndianRupee, 'Payments need chasing', 'Advance, balance and receipt notes are stored separately.'],
+  [IndianRupee, 'Payments need chasing', 'Advance, balance and receipt notes are stored separately.'],
 ];
 
 const afterItems = [
