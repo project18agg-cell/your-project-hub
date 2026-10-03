@@ -85,9 +85,9 @@ const Landing = () => {
                 <div className="grid grid-cols-2 gap-3 py-4">
                   {productSolutions.map((solution, index) => (
                     <motion.a key={solution.key} href={solution.href} animate={reduceMotion ? undefined : { y: [0, index % 2 ? -3 : 3, 0] }} transition={{ duration: 4 + index, repeat: Infinity }} className="group border border-border bg-background p-3 transition-colors hover:bg-muted/50">
-                      <div className="flex items-center gap-2"><span className={cn('flex h-8 w-8 items-center justify-center border', toneClasses[solution.tone])}><solution.icon className="h-4 w-4" /></span><span className="text-sm font-bold">{solution.name}</span></div>
-                      <div className="mt-4 flex items-center gap-1 overflow-hidden">
-                        {solution.workflow.map((step, stepIndex) => <div key={step} className="contents"><span className="truncate border border-border bg-card px-2 py-1 text-[9px] font-semibold text-muted-foreground">{step}</span>{stepIndex < 2 ? <ChevronRight className="h-3 w-3 shrink-0 text-primary" /> : null}</div>)}
+                      <div className="flex items-center gap-2"><span className={cn('flex h-8 w-8 shrink-0 items-center justify-center border', toneClasses[solution.tone])}><solution.icon className="h-4 w-4" /></span><span className="text-sm font-bold leading-tight">{solution.name}</span></div>
+                      <div className="mt-4 flex flex-col gap-1 sm:flex-row sm:flex-wrap sm:items-center">
+                        {solution.workflow.map((step, stepIndex) => <div key={step} className="flex items-center gap-1"><span className="border border-border bg-card px-2 py-1 text-[10px] font-semibold leading-tight text-muted-foreground">{step}</span>{stepIndex < solution.workflow.length - 1 ? <ChevronRight className="hidden h-3 w-3 shrink-0 text-primary sm:block" /> : null}</div>)}
                       </div>
                     </motion.a>
                   ))}
@@ -138,7 +138,7 @@ const Landing = () => {
 
 
         <section id="resources" className="scroll-mt-20 border-t border-border py-14">
-          <div className="mx-auto flex max-w-7xl flex-col justify-between gap-6 px-4 sm:flex-row sm:items-center sm:px-6 lg:px-8"><div><p className="text-sm font-bold uppercase text-primary">Resources</p><h2 className="mt-2 font-display text-2xl font-bold">Practical thinking for growing businesses.</h2><p className="mt-2 text-sm text-muted-foreground">Workflow guides and useful business software insights are coming soon.</p></div><Button variant="outline" asChild><a href="tel:+918807858256">Ask our team <ArrowRight /></a></Button></div>
+          <div className="mx-auto flex max-w-7xl flex-col justify-between gap-6 px-4 sm:flex-row sm:items-center sm:px-6 lg:px-8"><div><p className="text-sm font-bold uppercase text-primary">Resources</p><h2 className="mt-2 font-display text-2xl font-bold">Practical thinking for growing businesses.</h2><p className="mt-2 text-sm text-muted-foreground">Guides on software pricing, CRM and turning manual work into simple systems.</p></div><Button variant="outline" asChild><Link to="/blog">Read the blog <ArrowRight /></Link></Button></div>
         </section>
       </main>
 
