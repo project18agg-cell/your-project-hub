@@ -2,6 +2,7 @@ import { ArrowRight, Check, ClipboardList, Gauge, Layers3, RefreshCw } from 'luc
 import { LandingNavbar } from '@/components/landing/LandingNavbar';
 import { LandingFooter } from '@/components/landing/LandingFooter';
 import { ChatBot } from '@/components/landing/ChatBot';
+import { BeforeAfterWorkflow } from '@/components/landing/BeforeAfterWorkflow';
 import { CustomSaasForm } from '@/components/landing/CustomSaasForm';
 import { SEOHead } from '@/components/SEOHead';
 import { PageViewTracker } from '@/components/landing/PageViewTracker';
@@ -60,6 +61,8 @@ const CustomSaas = () => (
           </div>
         </div>
       </section>
+
+      <BeforeAfterWorkflow />
 
       <section className="py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

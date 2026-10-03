@@ -9,7 +9,7 @@ const navLinks = [
   { href: '/custom-saas', label: 'Custom SaaS' },
   { href: '/#solutions', label: 'Solutions' },
   { href: '/pricing', label: 'Pricing' },
-  { href: '/#resources', label: 'Resources' },
+  { href: '/blog', label: 'Resources' },
 ];
 
 export const LandingNavbar = ({ logoColor }: { logoColor?: string }) => {

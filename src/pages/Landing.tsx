@@ -138,7 +138,7 @@ const Landing = () => {
 
 
         <section id="resources" className="scroll-mt-20 border-t border-border py-14">
-          <div className="mx-auto flex max-w-7xl flex-col justify-between gap-6 px-4 sm:flex-row sm:items-center sm:px-6 lg:px-8"><div><p className="text-sm font-bold uppercase text-primary">Resources</p><h2 className="mt-2 font-display text-2xl font-bold">Practical thinking for growing businesses.</h2><p className="mt-2 text-sm text-muted-foreground">Workflow guides and useful business software insights are coming soon.</p></div><Button variant="outline" asChild><a href="tel:+918807858256">Ask our team <ArrowRight /></a></Button></div>
+          <div className="mx-auto flex max-w-7xl flex-col justify-between gap-6 px-4 sm:flex-row sm:items-center sm:px-6 lg:px-8"><div><p className="text-sm font-bold uppercase text-primary">Resources</p><h2 className="mt-2 font-display text-2xl font-bold">Practical thinking for growing businesses.</h2><p className="mt-2 text-sm text-muted-foreground">Guides on software pricing, CRM and turning manual work into simple systems.</p></div><Button variant="outline" asChild><Link to="/blog">Read the blog <ArrowRight /></Link></Button></div>
         </section>
       </main>
 

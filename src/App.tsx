@@ -10,6 +10,8 @@ import { ScrollToTop } from "@/components/ScrollToTop";
 import Auth from "./pages/Auth";
 import Landing from "./pages/Landing";
 import CustomSaas from "./pages/CustomSaas";
+import Blog from "./pages/Blog";
+import BlogPostPage from "./pages/BlogPost";
 import PricingPage from "./pages/Pricing";
 import UseCase from "./pages/UseCase";
 import { useCasePages } from "@/lib/useCasePages";
@@ -57,7 +59,9 @@ const App = () => (
             {['/vahanhub', '/upcurv-ecom', '/upcurv-retail', '/upcurv-prime', '/upcurv-wash', '/upcurv-labs', '/upcurv-prime/privacy', '/upcurv-prime/terms', '/upcurv-prime/data-deletion'].map((path) => (
               <Route key={path} path={path} element={<Navigate to="/#products" replace />} />
             ))}
-            <Route path="/blogs" element={<Navigate to="/#resources" replace />} />
+            <Route path="/blogs" element={<Navigate to="/blog" replace />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPostPage />} />
             <Route path="/about" element={<About />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
