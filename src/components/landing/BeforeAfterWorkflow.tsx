@@ -15,6 +15,8 @@ const afterItems = [
 
 export const BeforeAfterWorkflow = () => {
   const [position, setPosition] = useState(50);
+  const [mobileView, setMobileView] = useState<'before' | 'after'>('before');
+  const mobileItems = mobileView === 'before' ? beforeItems : afterItems;
 
   return (
     <section className="border-y border-border bg-secondary py-16 sm:py-24">
@@ -25,7 +27,17 @@ export const BeforeAfterWorkflow = () => {
           <p className="mt-4 leading-7 text-muted-foreground">Move the divider to compare scattered manual work with one connected Custom SaaS workflow.</p>
         </div>
 
-        <div className="relative mt-10 min-h-[500px] overflow-hidden border border-border bg-card shadow-lg sm:min-h-[430px]">
+        <div className="mt-8 md:hidden">
+          <div className="grid grid-cols-2 border border-border bg-card p-1">
+            {(['before', 'after'] as const).map((v) => <button key={v} onClick={() => setMobileView(v)} className={`py-2 text-xs font-bold uppercase ${mobileView === v ? (v === 'before' ? 'bg-primary text-primary-foreground' : 'bg-success text-success-foreground') : 'text-muted-foreground'}`}>{v === 'before' ? 'Before · Manual' : 'After · Upcurv'}</button>)}
+          </div>
+          <div className={`mt-3 border border-border p-5 ${mobileView === 'before' ? 'bg-accent' : 'bg-card'}`}>
+            <h3 className="font-display text-xl font-bold">{mobileView === 'before' ? 'The day depends on memory and messages.' : 'Every booking has a clear path.'}</h3>
+            <div className="mt-5 space-y-4">{mobileItems.map(([Icon, title, copy]) => { const I = Icon as typeof Check; return <div key={title as string} className="flex gap-3 border-b border-border pb-4 last:border-0"><span className={`flex h-9 w-9 shrink-0 items-center justify-center ${mobileView === 'before' ? 'bg-primary/10 text-primary' : 'bg-success/10 text-success'}`}><I className="h-4 w-4" /></span><div><p className="text-sm font-bold">{title as string}</p><p className="mt-1 text-xs leading-5 text-muted-foreground">{copy as string}</p></div></div>; })}</div>
+          </div>
+        </div>
+
+        <div className="relative mt-10 hidden min-h-[430px] overflow-hidden border border-border bg-card shadow-lg md:block">
           <div className="absolute inset-0 grid content-start bg-card p-5 sm:p-8 lg:p-10">
             <div className="ml-auto w-full pl-10 sm:w-1/2 sm:pl-12">
               <p className="text-xs font-bold uppercase text-success">After · With Upcurv Custom SaaS</p>
@@ -67,7 +79,7 @@ export const BeforeAfterWorkflow = () => {
             className="absolute inset-0 z-20 h-full w-full cursor-ew-resize opacity-0"
           />
         </div>
-        <div className="mt-3 flex justify-between text-xs font-bold uppercase text-muted-foreground"><span>Manual workflow</span><span>Connected workflow</span></div>
+        <div className="mt-3 hidden justify-between text-xs md:flex font-bold uppercase text-muted-foreground"><span>Manual workflow</span><span>Connected workflow</span></div>
       </div>
     </section>
   );
