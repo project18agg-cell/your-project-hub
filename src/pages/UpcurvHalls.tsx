@@ -47,7 +47,7 @@ const howItWorks = [
 ];
 
 const UpcurvHalls = () => (
-  <div className="min-h-screen bg-white">
+  <div className="public-site min-h-screen bg-background text-foreground">
     <SEOHead
       title="Upcurv Halls - Wedding & Event Hall Management System"
       description="Complete wedding hall and event venue management — bookings, catering, payments, guest management, and analytics."

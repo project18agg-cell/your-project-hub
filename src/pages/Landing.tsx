@@ -51,7 +51,7 @@ const Landing = () => {
   const HallIcon = publicSolutions[4].icon;
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+  <div className="public-site min-h-screen bg-background text-foreground">
       <SEOHead title="Business Software Built Around How You Work" description="Upcurv builds digital products and custom business software that help growing businesses simplify operations, reach customers and move faster." path="/" />
       <PageViewTracker title="Home" />
       <LandingNavbar />

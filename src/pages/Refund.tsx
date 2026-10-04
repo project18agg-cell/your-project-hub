@@ -3,7 +3,7 @@ import { LandingFooter } from '@/components/landing/LandingFooter';
 import { SEOHead } from '@/components/SEOHead';
 
 const Refund = () => (
-  <div className="min-h-screen bg-white">
+  <div className="public-site min-h-screen bg-background text-foreground">
     <SEOHead title="Refund Policy" description="Upcurv Innovations refund policy for SaaS subscriptions." path="/refund" />
     <LandingNavbar />
     <section className="py-16">

@@ -41,7 +41,7 @@ const BlogPostPage = () => {
   const date = (d: string) => new Date(d).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="public-site min-h-screen bg-background text-foreground">
       <SEOHead title={post.title} description={post.description} path={`/blog/${post.slug}`} jsonLd={jsonLd} />
       <LandingNavbar />
       <main>

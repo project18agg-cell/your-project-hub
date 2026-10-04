@@ -37,27 +37,27 @@ const buildTypes = [
 ];
 
 const CustomSaas = () => (
-  <div className="min-h-screen bg-background text-foreground">
+  <div className="public-site min-h-screen bg-background text-foreground">
     <SEOHead title="Affordable Custom Software Development in India – From ₹699/Month" description="Affordable custom software and SaaS development for small businesses in India. CRM, inventory, billing and ERP built around your workflow on a monthly subscription from ₹699/month — no big upfront cost." path="/custom-saas" jsonLd={jsonLd} />
     <PageViewTracker title="Custom SaaS" />
     <LandingNavbar />
     <main>
-      <section className="bg-foreground py-20 text-primary-foreground sm:py-28">
+      <section className="border-b border-border bg-background py-16 sm:py-24">
         <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
           <div>
             <p className="text-sm font-bold uppercase text-primary">Custom SaaS</p>
             <h1 className="mt-4 max-w-3xl font-display text-4xl font-bold leading-tight sm:text-6xl">Affordable Custom Software &amp; SaaS Development in India – From ₹699/Month</h1>
-            <p className="mt-6 max-w-2xl text-base leading-7 text-primary-foreground/70">Your business is unique — your software can be too. Stop forcing your workflow into generic software. We build web applications, dashboards and business management systems around the way your company actually operates.</p>
+            <p className="mt-6 max-w-2xl text-base leading-7 text-muted-foreground">Your business is unique — your software can be too. Stop forcing your workflow into generic software. We build web applications, dashboards and business management systems around the way your company actually operates.</p>
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <Button size="lg" asChild><a href="#discussion">Discuss my workflow <ArrowRight /></a></Button>
-              <p className="text-sm font-semibold text-primary-foreground/70">Starting from {publicPricing.customSaas.price}</p>
+              <p className="text-sm font-semibold text-muted-foreground">Starting from {publicPricing.customSaas.price}</p>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-px bg-primary-foreground/15">
+          <div className="grid grid-cols-2 gap-px border border-border bg-border shadow-sm">
             {[
               ['01', 'Tell us the problem'], ['02', 'We map your workflow'],
               ['03', 'We build the system'], ['04', 'You use it monthly'],
-            ].map(([number, label]) => <div key={number} className="bg-foreground p-5 sm:p-7"><p className="font-display text-3xl font-bold text-primary">{number}</p><p className="mt-4 text-sm font-semibold">{label}</p></div>)}
+            ].map(([number, label]) => <div key={number} className="min-h-32 bg-card p-5 sm:p-7"><p className="font-display text-3xl font-bold text-primary">{number}</p><p className="mt-4 text-sm font-semibold text-foreground">{label}</p></div>)}
           </div>
         </div>
       </section>

@@ -20,7 +20,7 @@ const Blog = () => {
   const posts = category === 'All' ? blogPosts : blogPosts.filter((p) => p.category === category);
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="public-site min-h-screen bg-background text-foreground">
       <SEOHead title="Business Software & Pricing Guides" description="Practical guides on custom software cost in India, CRM for small businesses, booking management and turning manual workflows into useful software." path="/blog" jsonLd={jsonLd} />
       <LandingNavbar />
       <main>
