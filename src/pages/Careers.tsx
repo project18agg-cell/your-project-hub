@@ -101,7 +101,7 @@ const Careers = () => {
   const inputClass = "w-full border border-border rounded-xl px-4 py-3 text-sm bg-background focus:outline-none focus:ring-2 focus:ring-[#F9423A]/40 transition-all";
 
   return (
-    <>
+    <div className="public-site min-h-screen bg-background text-foreground">
       <SEOHead title="Careers & Internships" path="/careers" description="Join Upcurv as a student intern. Explore openings in development, design, marketing & business development." />
       <PageViewTracker title="Careers" />
       <LandingNavbar />
@@ -207,7 +207,7 @@ const Careers = () => {
 
       <LandingFooter />
       <ChatBot />
-    </>
+    </div>
   );
 };
 

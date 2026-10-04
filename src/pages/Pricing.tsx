@@ -13,7 +13,7 @@ const hubPlans = [
 ];
 
 const Pricing = () => (
-  <div className="min-h-screen bg-background text-foreground">
+  <div className="public-site min-h-screen bg-background text-foreground">
     <SEOHead title="Product Pricing" description="Compare pricing for UpcurvHub, Upcurv Trade, Upcurv Prints, Custom SaaS and Upcurv Halls." path="/pricing" />
     <PageViewTracker title="Pricing" />
     <LandingNavbar />

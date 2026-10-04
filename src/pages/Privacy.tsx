@@ -3,7 +3,7 @@ import { LandingFooter } from '@/components/landing/LandingFooter';
 import { SEOHead } from '@/components/SEOHead';
 
 const Privacy = () => (
-  <div className="min-h-screen bg-white">
+  <div className="public-site min-h-screen bg-background text-foreground">
     <SEOHead title="Privacy Policy" description="Upcurv Innovations privacy policy — how we collect, use, and protect your information." path="/privacy" />
     <LandingNavbar />
     <section className="py-16">

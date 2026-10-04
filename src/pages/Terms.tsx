@@ -3,7 +3,7 @@ import { LandingFooter } from '@/components/landing/LandingFooter';
 import { SEOHead } from '@/components/SEOHead';
 
 const Terms = () => (
-  <div className="min-h-screen bg-white">
+  <div className="public-site min-h-screen bg-background text-foreground">
     <SEOHead title="Terms of Service" description="Terms of service for Upcurv Innovations SaaS products and services." path="/terms" />
     <LandingNavbar />
     <section className="py-16">

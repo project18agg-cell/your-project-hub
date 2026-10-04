@@ -28,19 +28,19 @@ const UseCase = ({ page }: { page: UseCasePage }) => {
   ];
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="public-site min-h-screen bg-background text-foreground">
       <SEOHead title={page.title} description={page.description} path={`/${page.slug}`} jsonLd={jsonLd} />
       <PageViewTracker title={page.name} />
       <LandingNavbar />
       <main>
-        <section className="bg-foreground py-16 text-primary-foreground sm:py-24">
+        <section className="border-b border-border bg-background py-16 sm:py-24">
           <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-            <nav className="text-xs text-primary-foreground/60"><Link to="/">Home</Link> / <Link to="/custom-saas">Custom SaaS</Link> / {page.name}</nav>
+            <nav className="text-xs text-muted-foreground"><Link to="/">Home</Link> / <Link to="/custom-saas">Custom SaaS</Link> / {page.name}</nav>
             <h1 className="mt-5 font-display text-4xl font-bold leading-tight sm:text-5xl">{page.h1}</h1>
-            <p className="mt-6 max-w-2xl leading-7 text-primary-foreground/70">{page.intro}</p>
+            <p className="mt-6 max-w-2xl leading-7 text-muted-foreground">{page.intro}</p>
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <Button size="lg" asChild><a href="#discussion">Discuss my requirements <ArrowRight /></a></Button>
-              <p className="text-sm font-semibold text-primary-foreground/70">Monthly subscription from {publicPricing.customSaas.price}</p>
+              <p className="text-sm font-semibold text-muted-foreground">Monthly subscription from {publicPricing.customSaas.price}</p>
             </div>
           </div>
         </section>

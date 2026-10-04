@@ -29,28 +29,28 @@ export const LandingNavbar = ({ logoColor }: { logoColor?: string }) => {
   return (
     <nav className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-xl">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center gap-2">
-            <UpcurvLogo size={36} color={logoColor} />
-            <span className="text-xl font-bold text-foreground">Upcurv</span>
+        <div className="flex h-14 items-center justify-between lg:h-16">
+          <Link to="/" className="flex items-center gap-2.5" aria-label="Upcurv home">
+            <UpcurvLogo size={32} color={logoColor} />
+            <span className="font-display text-lg font-bold text-foreground">Upcurv</span>
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden lg:flex items-center gap-7">
+          <div className="hidden items-center gap-1 lg:flex">
             {navLinks.map(link => (
               link.href.startsWith('/') && !link.href.startsWith('/#') ? (
-                <Link key={link.label} to={link.href} className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+                <Link key={link.label} to={link.href} className="px-3 py-2 text-sm font-semibold text-muted-foreground transition-colors hover:text-primary">
                   {link.label}
                 </Link>
               ) : (
-                <a key={link.label} href={link.href} onClick={() => handleNavClick(link.href)} className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+                <a key={link.label} href={link.href} onClick={() => handleNavClick(link.href)} className="px-3 py-2 text-sm font-semibold text-muted-foreground transition-colors hover:text-primary">
                   {link.label}
                 </a>
               )
             ))}
           </div>
 
-          <div className="hidden lg:flex items-center gap-3">
+          <div className="hidden items-center gap-2 lg:flex">
             <Button variant="ghost" asChild><a href="tel:+918807858256">Talk to Us</a></Button>
             <Button asChild>
               <Link to="/custom-saas">Get Started <ArrowUpRight /></Link>
