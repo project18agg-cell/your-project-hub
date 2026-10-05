@@ -17,7 +17,7 @@ const Terms = () => (
         <h2 className="text-xl font-semibold text-foreground mt-8 mb-4">3. Subscriptions & Payments</h2>
         <p className="text-muted-foreground">Subscription fees are billed in advance on a recurring basis. You can cancel your subscription at any time, but fees already paid are non-refundable unless covered by our refund policy.</p>
         <h2 className="text-xl font-semibold text-foreground mt-8 mb-4">4. Contact</h2>
-        <p className="text-muted-foreground">For questions regarding these terms, contact us at hello@upcurv.com.</p>
+        <p className="text-muted-foreground">For questions regarding these terms, contact us at upcurvinnovations@gmail.com.</p>
       </div>
     </section>
     <LandingFooter />

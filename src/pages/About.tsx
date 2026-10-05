@@ -64,7 +64,7 @@ const About = () => (
     <LandingNavbar />
 
     {/* HERO */}
-    <section className="bg-gradient-to-br from-[#F9423A]/5 to-white py-20">
+    <section className="border-b border-border bg-secondary py-16 sm:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <AnimatedSection>
           <h1 className="text-4xl sm:text-5xl font-bold text-foreground">About Upcurv</h1>
@@ -80,13 +80,13 @@ const About = () => (
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection>
           <div className="grid md:grid-cols-2 gap-8 mb-16">
-            <div className="bg-white rounded-xl border border-border p-8 shadow-sm">
-              <Target className="h-8 w-8 text-[#F9423A] mb-4" />
+            <div className="rounded-md border border-border bg-card p-8 shadow-sm">
+              <Target className="mb-4 h-8 w-8 text-primary" />
               <h3 className="text-xl font-bold text-foreground mb-3">Our Mission</h3>
               <p className="text-muted-foreground">To democratize SaaS technology for Indian businesses, making powerful business management tools accessible to every entrepreneur, regardless of size or location. We believe every shopkeeper, dealer, and retailer deserves enterprise-grade software at an affordable price.</p>
             </div>
-            <div className="bg-white rounded-xl border border-border p-8 shadow-sm">
-              <Eye className="h-8 w-8 text-[#F9423A] mb-4" />
+            <div className="rounded-md border border-border bg-card p-8 shadow-sm">
+              <Eye className="mb-4 h-8 w-8 text-primary" />
               <h3 className="text-xl font-bold text-foreground mb-3">Our Vision</h3>
               <p className="text-muted-foreground">To become India's leading SaaS ecosystem — where businesses thrive on cloud platforms and franchise partners drive local growth in every city. By 2028, we aim to serve 10,000+ businesses across 100 cities with our suite of industry-specific platforms.</p>
             </div>
@@ -105,8 +105,8 @@ const About = () => (
               { icon: MapPin, title: 'Local Impact', desc: 'We build for Indian businesses with local compliance, regional language support, and deep market understanding of tier-2 and tier-3 cities.' },
               { icon: Award, title: 'Transparency', desc: 'Clear pricing, honest communication, and open partnerships — no hidden costs, no surprises, no vendor lock-in.' },
             ].map(({ icon: Icon, title, desc }) => (
-              <div key={title} className="bg-muted/30 rounded-xl p-6">
-                <Icon className="h-6 w-6 text-[#F9423A] mb-3" />
+              <div key={title} className="rounded-md border border-border bg-card p-6">
+                <Icon className="mb-3 h-6 w-6 text-primary" />
                 <h3 className="font-semibold text-foreground mb-2">{title}</h3>
                 <p className="text-sm text-muted-foreground">{desc}</p>
               </div>
@@ -124,20 +124,20 @@ const About = () => (
           <p className="mt-2 text-muted-foreground">From a small team in Coimbatore to a national SaaS platform</p>
         </AnimatedSection>
         <div className="relative">
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-[#F9423A]/20" />
+          <div className="absolute bottom-0 left-4 top-0 w-0.5 bg-primary/20 md:left-1/2" />
           {timeline.map((item, i) => (
             <AnimatedCard key={i} delay={i * 0.08}>
               <div className={`relative flex items-start mb-8 ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
                 <div className={`hidden md:block w-1/2 ${i % 2 === 0 ? 'pr-12 text-right' : 'pl-12 text-left'}`}>
-                  <div className="bg-white rounded-xl border border-border p-5 shadow-sm">
-                    <span className="text-[#F9423A] font-bold text-sm">{item.year}</span>
+                  <div className="rounded-md border border-border bg-card p-5 shadow-sm">
+                    <span className="text-sm font-bold text-primary">{item.year}</span>
                     <h4 className="font-bold text-foreground mt-1">{item.title}</h4>
                     <p className="text-sm text-muted-foreground mt-1">{item.desc}</p>
                   </div>
                 </div>
-                <div className="absolute left-4 md:left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-[#F9423A] border-2 border-white mt-2 z-10" />
-                <div className="md:hidden ml-10 bg-white rounded-xl border border-border p-5 shadow-sm">
-                  <span className="text-[#F9423A] font-bold text-sm">{item.year}</span>
+                <div className="absolute left-4 z-10 mt-2 h-3 w-3 -translate-x-1/2 rounded-full border-2 border-card bg-primary md:left-1/2" />
+                <div className="ml-10 rounded-md border border-border bg-card p-5 shadow-sm md:hidden">
+                  <span className="text-sm font-bold text-primary">{item.year}</span>
                   <h4 className="font-bold text-foreground mt-1">{item.title}</h4>
                   <p className="text-sm text-muted-foreground mt-1">{item.desc}</p>
                 </div>
@@ -159,12 +159,12 @@ const About = () => (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {team.map((member, i) => (
             <AnimatedCard key={member.name} delay={i * 0.06}>
-              <div className="bg-white rounded-xl border border-border p-6 text-center hover:shadow-md transition-shadow">
-                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#F9423A]/20 to-[#F9423A]/5 flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-[#F9423A]">{member.name.split(' ').map(n => n[0]).join('')}</span>
+              <div className="rounded-md border border-border bg-card p-6 text-center transition-shadow hover:shadow-md">
+                <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center border border-primary/20 bg-accent">
+                  <span className="text-2xl font-bold text-primary">{member.name.split(' ').map(n => n[0]).join('')}</span>
                 </div>
                 <h3 className="font-bold text-foreground">{member.name}</h3>
-                <p className="text-sm text-[#F9423A] font-medium">{member.role}</p>
+                <p className="text-sm font-medium text-primary">{member.role}</p>
                 <p className="text-sm text-muted-foreground mt-2">{member.bio}</p>
               </div>
             </AnimatedCard>
@@ -202,10 +202,10 @@ const About = () => (
   },
 ].map((office, i) => (
             <AnimatedCard key={office.title} delay={i * 0.1}>
-              <div className="bg-white rounded-xl border border-border p-6 h-full">
-                <office.icon className="h-8 w-8 text-[#F9423A] mb-3" />
+              <div className="h-full rounded-md border border-border bg-card p-6">
+                <office.icon className="mb-3 h-8 w-8 text-primary" />
                 <h3 className="font-bold text-foreground">{office.title}</h3>
-                <p className="text-sm text-[#F9423A] font-medium">{office.desc}</p>
+                <p className="text-sm font-medium text-primary">{office.desc}</p>
                 <p className="text-sm text-muted-foreground mt-2">{office.detail}</p>
               </div>
             </AnimatedCard>
@@ -215,7 +215,7 @@ const About = () => (
     </section>
 
     {/* STATS */}
-    <section className="py-16 bg-[#F9423A] text-white">
+    <section className="bg-primary py-16 text-primary-foreground">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {[
@@ -226,7 +226,7 @@ const About = () => (
           ].map((stat, i) => (
             <AnimatedSection key={stat.label} delay={i * 0.1}>
               <div className="text-4xl font-black">{stat.value}</div>
-              <div className="text-sm text-white/80 mt-1">{stat.label}</div>
+              <div className="mt-1 text-sm text-primary-foreground/80">{stat.label}</div>
             </AnimatedSection>
           ))}
         </div>

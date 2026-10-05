@@ -13,7 +13,7 @@ const Refund = () => (
         <h2 className="text-xl font-semibold text-foreground mt-8 mb-4">1. Refund Eligibility</h2>
         <p className="text-muted-foreground">Refunds may be requested within 7 days of payment if you are unsatisfied with the service. After the 7-day window, refunds are processed at Upcurv's discretion.</p>
         <h2 className="text-xl font-semibold text-foreground mt-8 mb-4">2. How to Request a Refund</h2>
-        <p className="text-muted-foreground">To request a refund, please contact our support team at hello@upcurv.com with your subscription details and reason for the refund.</p>
+        <p className="text-muted-foreground">To request a refund, please contact our support team at upcurvinnovations@gmail.com with your subscription details and reason for the refund.</p>
         <h2 className="text-xl font-semibold text-foreground mt-8 mb-4">3. Processing</h2>
         <p className="text-muted-foreground">Approved refunds will be processed within 5-10 business days and credited to the original payment method.</p>
       </div>

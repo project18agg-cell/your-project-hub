@@ -17,7 +17,7 @@ const Privacy = () => (
         <h2 className="text-xl font-semibold text-foreground mt-8 mb-4">3. Data Security</h2>
         <p className="text-muted-foreground">We implement appropriate security measures to protect your personal information against unauthorized access, alteration, or destruction.</p>
         <h2 className="text-xl font-semibold text-foreground mt-8 mb-4">4. Contact Us</h2>
-        <p className="text-muted-foreground">If you have questions about this Privacy Policy, please contact us at hello@upcurv.com.</p>
+        <p className="text-muted-foreground">If you have questions about this Privacy Policy, please contact us at upcurvinnovations@gmail.com.</p>
       </div>
     </section>
     <LandingFooter />
