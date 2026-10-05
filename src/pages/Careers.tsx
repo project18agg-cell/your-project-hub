@@ -41,21 +41,21 @@ const SuccessAnimation = () => (
       initial={{ scale: 0 }}
       animate={{ scale: 1 }}
       transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
-      className="w-20 h-20 rounded-full bg-green-500 flex items-center justify-center"
+      className="flex h-20 w-20 items-center justify-center bg-primary"
     >
       <motion.div
         initial={{ pathLength: 0, opacity: 0 }}
         animate={{ pathLength: 1, opacity: 1 }}
         transition={{ delay: 0.5, duration: 0.5 }}
       >
-        <Check className="h-10 w-10 text-white" strokeWidth={3} />
+        <Check className="h-10 w-10 text-primary-foreground" strokeWidth={3} />
       </motion.div>
     </motion.div>
     <motion.h3
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.7 }}
-      className="text-xl font-bold text-green-600"
+      className="text-xl font-bold text-primary"
     >
       Application Submitted!
     </motion.h3>
@@ -98,7 +98,7 @@ const Careers = () => {
     setSubmitted(true);
   };
 
-  const inputClass = "w-full border border-border rounded-xl px-4 py-3 text-sm bg-background focus:outline-none focus:ring-2 focus:ring-[#F9423A]/40 transition-all";
+  const inputClass = "w-full rounded-md border border-border bg-background px-4 py-3 text-sm transition-all focus:outline-none focus:ring-2 focus:ring-ring";
 
   return (
     <div className="public-site min-h-screen bg-background text-foreground">
@@ -107,14 +107,14 @@ const Careers = () => {
       <LandingNavbar />
 
       {/* Hero */}
-      <section className="pt-28 pb-16 bg-gradient-to-br from-[#FFF8F0] to-white">
+      <section className="border-b border-border bg-secondary pb-16 pt-20">
         <div className="max-w-5xl mx-auto px-4 text-center">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <span className="inline-flex items-center gap-2 bg-[#F9423A]/10 text-[#F9423A] px-4 py-1.5 rounded-full text-sm font-medium mb-6">
+            <span className="mb-6 inline-flex items-center gap-2 border border-primary/20 bg-accent px-4 py-1.5 text-sm font-medium text-primary">
               <GraduationCap className="h-4 w-4" /> Exclusively for Students
             </span>
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Launch Your Career with <span className="text-[#F9423A]">Upcurv</span>
+              Launch Your Career with <span className="text-primary">Upcurv</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               We're looking for passionate students who want real-world experience building SaaS products used by thousands of businesses across India.
@@ -124,7 +124,7 @@ const Careers = () => {
       </section>
 
       {/* Why Intern */}
-      <section className="py-16 bg-white">
+      <section className="bg-background py-16">
         <div className="max-w-5xl mx-auto px-4">
           <h2 className="text-2xl font-bold text-center mb-10">Why Intern at Upcurv?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -135,7 +135,7 @@ const Careers = () => {
               { emoji: '💰', title: 'Stipend', desc: 'Performance-based stipend for top interns' },
             ].map((item, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
-                className="bg-[#FFF8F0] rounded-2xl p-6 text-center">
+                className="rounded-md border border-border bg-card p-6 text-center">
                 <div className="text-3xl mb-3">{item.emoji}</div>
                 <h3 className="font-semibold mb-1">{item.title}</h3>
                 <p className="text-sm text-muted-foreground">{item.desc}</p>
@@ -146,7 +146,7 @@ const Careers = () => {
       </section>
 
       {/* Open Roles */}
-      <section className="py-16 bg-[#FFF8F0]">
+      <section className="border-y border-border bg-secondary py-16">
         <div className="max-w-5xl mx-auto px-4">
           <h2 className="text-2xl font-bold text-center mb-10">Open Internship Roles</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -154,9 +154,9 @@ const Careers = () => {
               const Icon = role.icon;
               return (
                 <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
-                  className="bg-white rounded-2xl p-6 border border-border md:hover:shadow-lg transition-shadow">
-                  <div className="w-10 h-10 rounded-xl bg-[#F9423A]/10 flex items-center justify-center mb-4">
-                    <Icon className="h-5 w-5 text-[#F9423A]" />
+                  className="rounded-md border border-border bg-card p-6 transition-shadow md:hover:shadow-lg">
+                  <div className="mb-4 flex h-10 w-10 items-center justify-center border border-primary/20 bg-accent">
+                    <Icon className="h-5 w-5 text-primary" />
                   </div>
                   <h3 className="font-semibold mb-2">{role.title}</h3>
                   <p className="text-sm text-muted-foreground">{role.description}</p>
@@ -168,12 +168,12 @@ const Careers = () => {
       </section>
 
       {/* Application Form */}
-      <section className="py-16 bg-white">
+      <section className="bg-background py-16">
         <div className="max-w-2xl mx-auto px-4">
           <h2 className="text-2xl font-bold text-center mb-2">Apply Now</h2>
           <p className="text-center text-muted-foreground mb-8">Fill in the form below and we'll get back to you shortly.</p>
 
-          <div className="bg-[#FFF8F0] rounded-2xl p-6 sm:p-8 border border-border">
+          <div className="rounded-md border border-border bg-card p-6 sm:p-8">
             <AnimatePresence mode="wait">
               {submitted ? (
                 <SuccessAnimation key="success" />
@@ -194,7 +194,7 @@ const Careers = () => {
                   <input className={inputClass} placeholder="Portfolio / LinkedIn URL (optional)" value={form.portfolio_url} onChange={e => setForm(p => ({ ...p, portfolio_url: e.target.value }))} />
                   <textarea className={`${inputClass} resize-none`} placeholder="Why do you want to intern at Upcurv? (optional)" rows={3} value={form.message} onChange={e => setForm(p => ({ ...p, message: e.target.value }))} />
                   <button type="submit" disabled={loading}
-                    className="w-full bg-[#F9423A] text-white rounded-xl py-3 font-semibold hover:bg-[#e03830] transition-colors disabled:opacity-60 flex items-center justify-center gap-2">
+                    className="flex w-full items-center justify-center gap-2 rounded-md bg-primary py-3 font-semibold text-primary-foreground transition-colors hover:bg-primary/90 disabled:opacity-60">
                     {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : null}
                     {loading ? 'Submitting...' : 'Submit Application'}
                   </button>

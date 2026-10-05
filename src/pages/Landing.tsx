@@ -37,11 +37,11 @@ const recommendations: Record<string, { title: string; copy: string; href: strin
 };
 
 const toneClasses: Record<string, string> = {
-  hub: 'text-solution-hub bg-solution-hub/10 border-solution-hub/20',
-  prints: 'text-solution-prints bg-solution-prints/10 border-solution-prints/20',
-  trade: 'text-solution-trade bg-solution-trade/10 border-solution-trade/20',
-  saas: 'text-solution-saas bg-solution-saas/10 border-solution-saas/20',
-  halls: 'text-solution-halls bg-solution-halls/10 border-solution-halls/20',
+  hub: 'text-primary bg-accent border-primary/20',
+  prints: 'text-primary bg-accent border-primary/20',
+  trade: 'text-primary bg-accent border-primary/20',
+  saas: 'text-primary bg-accent border-primary/20',
+  halls: 'text-primary bg-accent border-primary/20',
 };
 
 const Landing = () => {
@@ -58,7 +58,7 @@ const Landing = () => {
 
       <main>
         <section className="relative overflow-hidden border-b border-border">
-          <div className="mx-auto grid min-h-[calc(100svh-4rem)] max-w-7xl items-center gap-10 px-4 py-14 sm:px-6 md:min-h-[720px] md:py-20 lg:grid-cols-[0.92fr_1.08fr] lg:px-8">
+          <div className="mx-auto grid min-h-[calc(100svh-3.5rem)] max-w-7xl items-center gap-10 px-4 py-14 sm:px-6 md:min-h-[680px] md:py-20 lg:grid-cols-[0.92fr_1.08fr] lg:px-8">
             <motion.div initial={reduceMotion ? false : { opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55 }}>
               <div className="mb-6 inline-flex items-center gap-2 border border-border bg-card px-3 py-1.5 text-xs font-bold uppercase text-muted-foreground">
                 <Sparkles className="h-3.5 w-3.5 text-primary" /> Built for real business workflows
@@ -73,14 +73,14 @@ const Landing = () => {
                 <Button size="lg" asChild><a href="#products">Explore our products <ArrowDown /></a></Button>
                 <Button size="lg" variant="outline" asChild><a href="#custom-saas">Build custom software <ArrowRight /></a></Button>
               </div>
-              <p className="mt-6 flex items-center gap-2 text-sm font-semibold text-muted-foreground"><CircleCheck className="h-4 w-4 text-success" /> Built for growing businesses. Designed around real workflows.</p>
+              <p className="mt-6 flex items-center gap-2 text-sm font-semibold text-muted-foreground"><CircleCheck className="h-4 w-4 text-primary" /> Built for growing businesses. Designed around real workflows.</p>
             </motion.div>
 
             <motion.div initial={reduceMotion ? false : { opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.15, duration: 0.6 }} className="relative">
               <div className="border border-border bg-card p-3 shadow-xl sm:p-5">
                 <div className="flex items-center justify-between border-b border-border pb-4">
                   <div><p className="font-display text-xl font-bold">Upcurv</p><p className="text-xs text-muted-foreground">One ecosystem. Different business paths.</p></div>
-                  <div className="flex items-center gap-2 text-xs font-semibold text-success"><span className="h-2 w-2 rounded-full bg-success" /> Systems active</div>
+                  <div className="flex items-center gap-2 text-xs font-semibold text-primary"><span className="h-2 w-2 rounded-full bg-primary" /> Systems active</div>
                 </div>
                 <div className="grid grid-cols-2 gap-3 py-4">
                   {productSolutions.map((solution, index) => (
@@ -92,7 +92,7 @@ const Landing = () => {
                     </motion.a>
                   ))}
                 </div>
-                <a href="/custom-saas#discussion" className="flex items-center justify-between border border-solution-saas/25 bg-solution-saas/10 p-4 text-solution-saas">
+                <a href="/custom-saas#discussion" className="flex items-center justify-between border border-primary/25 bg-accent p-4 text-primary">
                   <div className="flex items-center gap-3"><Settings2 className="h-5 w-5" /><div><p className="text-sm font-bold">Custom SaaS</p><p className="text-xs opacity-80">Your workflow becomes the product</p></div></div><ArrowRight className="h-4 w-4" />
                 </a>
               </div>
@@ -111,8 +111,8 @@ const Landing = () => {
                 </a>
               ))}
             </div>
-            <div className="mt-4 flex flex-col justify-between gap-5 border border-solution-halls/25 bg-solution-halls/10 p-5 sm:flex-row sm:items-center sm:p-7">
-              <div className="flex items-start gap-4"><div className="flex h-11 w-11 shrink-0 items-center justify-center border border-solution-halls/20 bg-card text-solution-halls"><HallIcon /></div><div><p className="font-display text-xl font-bold">Already run a hall or event venue?</p><p className="mt-1 text-sm text-muted-foreground">Upcurv Halls brings bookings, payments and event coordination together.</p></div></div>
+            <div className="mt-4 flex flex-col justify-between gap-5 border border-primary/20 bg-accent p-5 sm:flex-row sm:items-center sm:p-7">
+              <div className="flex items-start gap-4"><div className="flex h-11 w-11 shrink-0 items-center justify-center border border-primary/20 bg-card text-primary"><HallIcon /></div><div><p className="font-display text-xl font-bold">Already run a hall or event venue?</p><p className="mt-1 text-sm text-muted-foreground">Upcurv Halls brings bookings, payments and event coordination together.</p></div></div>
               <Button variant="outline" asChild><Link to="/upcurv-halls">Explore Upcurv Halls <ArrowRight /></Link></Button>
             </div>
           </div>
