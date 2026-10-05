@@ -1,211 +1,74 @@
 import { LandingNavbar } from '@/components/landing/LandingNavbar';
 import { LandingFooter } from '@/components/landing/LandingFooter';
 import { DemoRequestForm } from '@/components/landing/DemoRequestForm';
-import { AnimatedSection, AnimatedCard } from '@/components/landing/AnimatedSection';
 import { ChatBot } from '@/components/landing/ChatBot';
 import { SEOHead } from '@/components/SEOHead';
 import { PageViewTracker } from '@/components/landing/PageViewTracker';
+import { Button } from '@/components/ui/button';
 import {
-  CheckCircle2, ChevronRight, Star, Calendar, Clock, Users, BarChart3,
-  CreditCard, Bell, MapPin, Camera, Utensils, Music, Shield,
-  ArrowRight, TrendingUp, ClipboardList, Building
+  BarChart3, Bell, Building, Calendar, Camera, CheckCircle2,
+  ClipboardList, CreditCard, MapPin, Music, Shield, Users, Utensils,
 } from 'lucide-react';
 import hallsHero from '@/assets/halls-hero.png';
 import { publicPricing } from '@/lib/publicSolutions';
 
-const PRIMARY = '#E8A0BF';
-const DARK_PINK = '#C4739E';
-const TEXT_DARK = '#4A2040';
-
 const features = [
-  { icon: Calendar, title: 'Booking Calendar', desc: 'Visual calendar with date blocking, availability check, and slot management.' },
-  { icon: Building, title: 'Hall Management', desc: 'Manage multiple halls, seating capacity, and amenities.' },
-  { icon: Utensils, title: 'Catering Packages', desc: 'Configurable food menus with veg/non-veg options and pricing.' },
-  { icon: Music, title: 'Event Add-ons', desc: 'DJ, decoration, photography — manage all add-on services.' },
-  { icon: CreditCard, title: 'Payment Tracking', desc: 'Advance, installment, and final payment tracking with receipts.' },
-  { icon: Users, title: 'Guest Management', desc: 'Guest count tracking, invitation management, and RSVP.' },
-  { icon: Camera, title: 'Gallery & Portfolio', desc: 'Showcase past events with photo galleries for marketing.' },
-  { icon: Bell, title: 'WhatsApp Reminders', desc: 'Automated booking confirmations and event reminders.' },
-  { icon: BarChart3, title: 'Revenue Analytics', desc: 'Track bookings, revenue, seasonal trends, and occupancy.' },
-  { icon: ClipboardList, title: 'Checklist System', desc: 'Pre-event and post-event checklists for staff coordination.' },
-  { icon: Shield, title: 'Damage Deposits', desc: 'Manage security deposits, deductions, and refund tracking.' },
+  { icon: Calendar, title: 'Booking Calendar', desc: 'Visual calendar with date blocking, availability checks and slot management.' },
+  { icon: Building, title: 'Hall Management', desc: 'Manage multiple halls, seating capacity and amenities.' },
+  { icon: Utensils, title: 'Catering Packages', desc: 'Configurable food menus with options and pricing.' },
+  { icon: Music, title: 'Event Add-ons', desc: 'Coordinate decoration, photography and other services.' },
+  { icon: CreditCard, title: 'Payment Tracking', desc: 'Track advances, instalments and final payments with receipts.' },
+  { icon: Users, title: 'Guest Management', desc: 'Keep guest counts, invitations and responses together.' },
+  { icon: Camera, title: 'Gallery & Portfolio', desc: 'Showcase past events with organised photo galleries.' },
+  { icon: Bell, title: 'WhatsApp Reminders', desc: 'Send booking confirmations and event reminders.' },
+  { icon: BarChart3, title: 'Revenue Analytics', desc: 'Review bookings, revenue, seasonal trends and occupancy.' },
+  { icon: ClipboardList, title: 'Checklist System', desc: 'Coordinate staff with pre-event and post-event checklists.' },
+  { icon: Shield, title: 'Damage Deposits', desc: 'Manage security deposits, deductions and refunds.' },
   { icon: MapPin, title: 'Multi-Venue', desc: 'Manage multiple venues and branches from one dashboard.' },
 ];
 
-const stats = [
-  { value: '30+', label: 'Hall Partners' },
-  { value: '5K+', label: 'Events Managed' },
-  { value: '₹8L+', label: 'Revenue Tracked' },
-  { value: '99.9%', label: 'Uptime' },
+const howItWorks = [
+  ['01', 'Add your halls', 'Set up halls, capacity, pricing and availability.'],
+  ['02', 'Receive bookings', 'Handle enquiries from links, WhatsApp or walk-ins.'],
+  ['03', 'Manage events', 'Coordinate catering, decoration and logistics.'],
+  ['04', 'Collect and grow', 'Track payments, reviews and venue performance.'],
 ];
 
-const howItWorks = [
-  { step: '01', title: 'Add Your Halls', desc: 'Set up halls, capacity, pricing, and availability.' },
-  { step: '02', title: 'Receive Bookings', desc: 'Customers book via link, WhatsApp, or walk-in.' },
-  { step: '03', title: 'Manage Events', desc: 'Coordinate catering, decoration, and logistics.' },
-  { step: '04', title: 'Collect & Grow', desc: 'Track payments, reviews, and grow your venue business.' },
-];
+const planFeatures = ['Booking Calendar & Management', 'Multiple Hall Support', 'Catering Package Builder', 'Event Add-on Services', 'Payment & Deposit Tracking', 'Guest Management', 'WhatsApp Notifications', 'Revenue Analytics', 'Photo Gallery', 'Priority Support'];
 
 const UpcurvHalls = () => (
   <div className="public-site min-h-screen bg-background text-foreground">
-    <SEOHead
-      title="Upcurv Halls - Wedding & Event Hall Management System"
-      description="Complete wedding hall and event venue management — bookings, catering, payments, guest management, and analytics."
-      path="/upcurv-halls"
-    />
+    <SEOHead title="Upcurv Halls - Wedding & Event Hall Management System" description="Complete wedding hall and event venue management — bookings, catering, payments, guest management, and analytics." path="/upcurv-halls" />
     <PageViewTracker title="Upcurv Halls" />
-    <LandingNavbar logoColor="#C4739E" />
-
-    {/* HERO */}
-    <section className="py-20 sm:py-24 overflow-hidden" style={{ background: `linear-gradient(135deg, ${PRIMARY}15, #FFF5F9, ${PRIMARY}08)` }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <AnimatedSection>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-6 border" style={{ color: DARK_PINK, borderColor: `${PRIMARY}60`, backgroundColor: `${PRIMARY}15` }}>
-              <Building className="h-4 w-4" /> Wedding & Event Hall Management
-            </div>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight" style={{ color: TEXT_DARK }}>
-              Manage Your Halls<br />
-              <span style={{ color: DARK_PINK }}>Effortlessly</span>
-            </h1>
-            <p className="mt-6 text-base sm:text-lg max-w-xl leading-relaxed" style={{ color: '#777' }}>
-              Complete management system for wedding halls and event venues — bookings, catering, payments, and guest coordination in one platform.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <a href="#demo" className="inline-flex items-center gap-2 text-white px-6 sm:px-8 py-3 rounded-lg font-semibold transition-all shadow-lg hover:shadow-xl" style={{ backgroundColor: DARK_PINK }}>
-                Start Free Trial <ChevronRight className="h-4 w-4" />
-              </a>
-              <a href="#features" className="inline-flex items-center gap-2 border px-6 sm:px-8 py-3 rounded-lg font-semibold transition-colors" style={{ borderColor: `${PRIMARY}60`, color: DARK_PINK }}>
-                See Features
-              </a>
-            </div>
-            <div className="mt-6 flex flex-wrap items-center gap-4 sm:gap-6 text-sm" style={{ color: '#888' }}>
-              <div className="flex items-center gap-1.5"><CheckCircle2 className="h-4 w-4" style={{ color: '#22C55E' }} /> Free Setup</div>
-              <div className="flex items-center gap-1.5"><CheckCircle2 className="h-4 w-4" style={{ color: '#22C55E' }} /> 14-day Trial</div>
-              <div className="flex items-center gap-1.5"><CheckCircle2 className="h-4 w-4" style={{ color: '#22C55E' }} /> No Code Needed</div>
-            </div>
-          </AnimatedSection>
-          <AnimatedSection delay={0.2} className="relative">
-            <div className="rounded-2xl overflow-hidden shadow-2xl border" style={{ borderColor: `${PRIMARY}30` }}>
-              <img src={hallsHero} alt="Upcurv Halls Dashboard" className="w-full" />
-            </div>
-            <div className="absolute -bottom-4 -left-2 sm:-left-4 bg-white rounded-xl border shadow-lg p-2.5 sm:p-3 flex items-center gap-2" style={{ borderColor: '#eee' }}>
-              <div className="w-8 h-8 rounded-full flex items-center justify-center" style={{ backgroundColor: `${PRIMARY}25` }}><TrendingUp className="h-4 w-4" style={{ color: DARK_PINK }} /></div>
-              <div><p className="text-[10px]" style={{ color: '#888' }}>This Month</p><p className="text-[10px] font-bold" style={{ color: TEXT_DARK }}>18 bookings</p></div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </div>
-    </section>
-
-    {/* STATS */}
-    <section className="py-12 sm:py-14 border-y bg-white" style={{ borderColor: '#f0f0f0' }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
-          {stats.map((s, i) => (
-            <AnimatedSection key={s.label} delay={i * 0.1} className="text-center">
-              <div className="text-3xl sm:text-4xl font-black" style={{ color: DARK_PINK }}>{s.value}</div>
-              <div className="text-xs sm:text-sm mt-1 font-medium" style={{ color: '#888' }}>{s.label}</div>
-            </AnimatedSection>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    {/* HOW IT WORKS */}
-    <section className="py-16 sm:py-24" style={{ backgroundColor: '#FFF5F9' }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <AnimatedSection className="text-center mb-10 sm:mb-12">
-          <span className="text-sm font-semibold uppercase tracking-wide" style={{ color: DARK_PINK }}>Simple 4-Step Process</span>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mt-2" style={{ color: TEXT_DARK }}>Get Started in Minutes</h2>
-        </AnimatedSection>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
-          {howItWorks.map((step, i) => (
-            <AnimatedCard key={step.step} delay={i * 0.1}>
-              <div className="bg-white rounded-xl border p-4 sm:p-6 relative overflow-hidden h-full" style={{ borderColor: `${PRIMARY}30` }}>
-                <div className="text-4xl sm:text-6xl font-black absolute top-1 sm:top-2 right-2 sm:right-3" style={{ color: `${PRIMARY}20` }}>{step.step}</div>
-                <h3 className="font-bold text-sm sm:text-base mb-1 sm:mb-2 mt-1 sm:mt-2" style={{ color: TEXT_DARK }}>{step.title}</h3>
-                <p className="text-[10px] sm:text-sm leading-relaxed" style={{ color: '#888' }}>{step.desc}</p>
-              </div>
-            </AnimatedCard>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    {/* FEATURES */}
-    <section id="features" className="py-16 sm:py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <AnimatedSection className="text-center mb-12 sm:mb-16">
-          <span className="text-sm font-semibold uppercase tracking-wide" style={{ color: DARK_PINK }}>Full Feature Set</span>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mt-2" style={{ color: TEXT_DARK }}>Everything to Manage Your Venue Business</h2>
-        </AnimatedSection>
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
-          {features.map(({ icon: Icon, title, desc }, i) => (
-            <AnimatedCard key={title} delay={i * 0.04}>
-              <div className="bg-white rounded-xl border p-3 sm:p-6 md:hover:shadow-lg transition-all duration-300 h-full group" style={{ borderColor: `${PRIMARY}25` }}>
-                <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center mb-2 sm:mb-4 transition-colors duration-300" style={{ backgroundColor: `${PRIMARY}15` }}>
-                  <Icon className="h-4 w-4 sm:h-6 sm:w-6" style={{ color: DARK_PINK }} />
-                </div>
-                <h3 className="font-bold text-xs sm:text-base mb-1 sm:mb-2" style={{ color: TEXT_DARK }}>{title}</h3>
-                <p className="text-[10px] sm:text-sm leading-relaxed hidden sm:block" style={{ color: '#888' }}>{desc}</p>
-              </div>
-            </AnimatedCard>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    {/* CTA */}
-    <section className="py-12 sm:py-16" style={{ backgroundColor: DARK_PINK }}>
-      <div className="max-w-4xl mx-auto px-4 text-center">
-        <AnimatedSection>
-          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3 sm:mb-4">Ready to Digitize Your Hall Business?</h2>
-          <p className="text-white/80 text-sm sm:text-lg mb-6 sm:mb-8">Join venue owners already growing with Upcurv Halls.</p>
-          <a href="#demo" className="inline-flex items-center gap-2 bg-white font-bold px-6 sm:px-8 py-3 rounded-lg hover:bg-gray-50 transition-colors" style={{ color: DARK_PINK }}>
-            Get Free Demo <ChevronRight className="h-4 w-4" />
-          </a>
-        </AnimatedSection>
-      </div>
-    </section>
-
-    {/* PRICING */}
-    <section className="py-16 sm:py-24 bg-white" id="pricing">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <AnimatedSection className="text-center mb-10 sm:mb-12">
-          <span className="text-sm font-semibold uppercase tracking-wide" style={{ color: DARK_PINK }}>Simple Pricing</span>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mt-2" style={{ color: TEXT_DARK }}>One Plan. Everything Included.</h2>
-        </AnimatedSection>
-        <AnimatedSection className="max-w-md mx-auto">
-          <div className="bg-white rounded-2xl border-2 p-6 sm:p-8 shadow-xl relative" style={{ borderColor: DARK_PINK }}>
-            <div className="absolute -top-3 left-1/2 -translate-x-1/2 text-white text-xs font-bold px-4 py-1 rounded-full" style={{ backgroundColor: DARK_PINK }}>BEST VALUE</div>
-            <h3 className="text-xl sm:text-2xl font-bold text-center" style={{ color: TEXT_DARK }}>Upcurv Halls Pro</h3>
-            <div className="text-center mt-4"><span className="text-lg line-through mr-2" style={{ color: '#888' }}>{publicPricing.halls.previousPrice}</span><span className="text-4xl sm:text-5xl font-black" style={{ color: DARK_PINK }}>{publicPricing.halls.price}</span></div>
-            <p className="text-sm text-center mt-2" style={{ color: '#888' }}>Per venue • Billed yearly</p>
-            <ul className="mt-6 space-y-2 sm:space-y-3">
-              {['Booking Calendar & Management', 'Multiple Hall Support', 'Catering Package Builder', 'Event Add-on Services', 'Payment & Deposit Tracking', 'Guest Management', 'WhatsApp Notifications', 'Revenue Analytics', 'Photo Gallery', 'Priority Support'].map(f => (
-                <li key={f} className="flex items-center gap-2 text-xs sm:text-sm" style={{ color: TEXT_DARK }}><CheckCircle2 className="h-4 w-4 shrink-0" style={{ color: DARK_PINK }} />{f}</li>
-              ))}
-            </ul>
-            <a href="#demo" className="mt-6 sm:mt-8 block w-full text-center text-white py-3 rounded-lg font-semibold transition-colors" style={{ backgroundColor: DARK_PINK }}>Start Free Trial</a>
+    <LandingNavbar />
+    <main>
+      <section className="border-b border-border py-14 sm:py-20">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
+          <div>
+            <p className="flex items-center gap-2 text-sm font-bold uppercase text-primary"><Building className="h-4 w-4" /> Wedding &amp; event hall management</p>
+            <h1 className="mt-4 font-display text-4xl font-bold leading-tight sm:text-6xl">Run every booking with <span className="text-primary">fewer gaps.</span></h1>
+            <p className="mt-5 max-w-xl leading-7 text-muted-foreground">Bring enquiries, bookings, catering, payments and guest coordination into one practical venue system.</p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row"><Button size="lg" asChild><a href="#demo">Request a demo</a></Button><Button size="lg" variant="outline" asChild><a href="#features">See features</a></Button></div>
+            <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold text-muted-foreground">{['Free setup', '14-day trial', 'No code needed'].map((item) => <span key={item} className="flex items-center gap-1.5"><CheckCircle2 className="h-4 w-4 text-primary" />{item}</span>)}</div>
           </div>
-        </AnimatedSection>
-      </div>
-    </section>
-
-    {/* DEMO */}
-    <section id="demo" className="py-16 sm:py-24" style={{ backgroundColor: '#FFF5F9' }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <AnimatedSection className="text-center mb-8 sm:mb-10">
-          <h2 className="text-2xl sm:text-3xl font-bold" style={{ color: TEXT_DARK }}>Get Started Today</h2>
-          <p className="mt-2 text-sm sm:text-base" style={{ color: '#888' }}>Request a free personalized demo of Upcurv Halls</p>
-        </AnimatedSection>
-        <div className="rounded-2xl shadow-sm border p-6 sm:p-8 max-w-xl mx-auto bg-white" style={{ borderColor: '#eee' }}>
-          <DemoRequestForm product="upcurv_halls" accentColor={DARK_PINK} />
+          <div className="relative border border-border bg-card p-3 shadow-lg sm:p-5"><img src={hallsHero} alt="Upcurv Halls booking dashboard" className="w-full border border-border" /><div className="absolute -bottom-4 left-6 border border-border bg-card px-4 py-3 shadow-md"><p className="text-xs text-muted-foreground">One live view</p><p className="text-sm font-bold">Bookings, dues and events</p></div></div>
         </div>
-      </div>
-    </section>
+      </section>
 
+      <section className="border-b border-border bg-secondary py-14 sm:py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"><p className="text-sm font-bold uppercase text-primary">A clear operating flow</p><h2 className="mt-3 font-display text-3xl font-bold sm:text-4xl">From first enquiry to completed event.</h2><div className="mt-8 grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">{howItWorks.map(([step, title, desc]) => <article key={step} className="bg-card p-5 sm:p-6"><p className="font-display text-3xl font-bold text-primary">{step}</p><h3 className="mt-5 font-display text-lg font-bold">{title}</h3><p className="mt-2 text-sm leading-6 text-muted-foreground">{desc}</p></article>)}</div></div>
+      </section>
+
+      <section id="features" className="scroll-mt-20 py-16 sm:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"><div className="max-w-3xl"><p className="text-sm font-bold uppercase text-primary">Full feature set</p><h2 className="mt-3 font-display text-3xl font-bold sm:text-5xl">Everything your venue team needs in one place.</h2></div><div className="mt-10 grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">{features.map(({ icon: Icon, title, desc }) => <article key={title} className="bg-card p-5 sm:p-6"><span className="flex h-10 w-10 items-center justify-center border border-primary/20 bg-accent text-primary"><Icon className="h-5 w-5" /></span><h3 className="mt-5 font-display text-lg font-bold">{title}</h3><p className="mt-2 text-sm leading-6 text-muted-foreground">{desc}</p></article>)}</div></div>
+      </section>
+
+      <section id="pricing" className="border-y border-border bg-secondary py-16 sm:py-24">
+        <div className="mx-auto grid max-w-5xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:px-8"><div><p className="text-sm font-bold uppercase text-primary">Simple pricing</p><h2 className="mt-3 font-display text-3xl font-bold sm:text-4xl">One plan. Everything included.</h2><p className="mt-4 text-muted-foreground">A complete venue operations system with support included.</p></div><article className="border-2 border-primary bg-card p-6 shadow-sm sm:p-8"><p className="text-xs font-bold uppercase text-primary">Upcurv Halls Pro</p><div className="mt-4 flex flex-wrap items-baseline gap-3"><span className="font-display text-4xl font-bold">{publicPricing.halls.price}</span><span className="text-sm text-muted-foreground line-through">{publicPricing.halls.previousPrice}</span></div><p className="mt-2 text-sm text-muted-foreground">Per venue · billed yearly</p><ul className="mt-6 grid gap-3 sm:grid-cols-2">{planFeatures.map((feature) => <li key={feature} className="flex gap-2 text-sm font-semibold"><CheckCircle2 className="h-4 w-4 shrink-0 text-primary" />{feature}</li>)}</ul><Button className="mt-8" asChild><a href="#demo">Request a demo</a></Button></article></div>
+      </section>
+
+      <section id="demo" className="scroll-mt-20 py-16 sm:py-24"><div className="mx-auto max-w-3xl px-4 sm:px-6"><div className="mb-8"><p className="text-sm font-bold uppercase text-primary">See it with your workflow</p><h2 className="mt-3 font-display text-3xl font-bold">Request a personalised demo</h2></div><div className="border border-border bg-card p-5 shadow-sm sm:p-8"><DemoRequestForm product="upcurv_halls" /></div></div></section>
+    </main>
     <LandingFooter />
     <ChatBot />
   </div>

@@ -9,10 +9,9 @@ import { Loader2 } from 'lucide-react';
 
 interface DemoRequestFormProps {
   product: string;
-  accentColor: string;
 }
 
-export const DemoRequestForm = ({ product, accentColor }: DemoRequestFormProps) => {
+export const DemoRequestForm = ({ product }: DemoRequestFormProps) => {
   const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({
     name: '',
@@ -85,7 +84,7 @@ export const DemoRequestForm = ({ product, accentColor }: DemoRequestFormProps) 
         <Label>Message</Label>
         <Textarea value={form.message} onChange={e => setForm(p => ({ ...p, message: e.target.value }))} placeholder="Tell us about your needs..." rows={3} maxLength={1000} />
       </div>
-      <Button type="submit" disabled={loading} className="w-full text-white" style={{ backgroundColor: accentColor }}>
+      <Button type="submit" disabled={loading} className="w-full">
         {loading ? <Loader2 className="h-4 w-4 animate-spin mr-2" /> : null}
         Request Demo
       </Button>
