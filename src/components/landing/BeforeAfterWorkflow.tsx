@@ -24,28 +24,28 @@ export const BeforeAfterWorkflow = () => {
         <div className="max-w-3xl">
           <p className="text-sm font-bold uppercase text-primary">Before and after</p>
           <h2 className="mt-3 font-display text-3xl font-bold sm:text-5xl">A marriage hall workflow, made easier to run.</h2>
-          <p className="mt-4 leading-7 text-muted-foreground">Move the divider to compare scattered manual work with one connected Custom SaaS workflow.</p>
+          <p className="mt-4 leading-7 text-muted-foreground"><span className="md:hidden">Choose a view</span><span className="hidden md:inline">Move the divider</span> to compare scattered manual work with one connected Custom SaaS workflow.</p>
         </div>
 
         <div className="mt-8 md:hidden">
           <div className="grid grid-cols-2 border border-border bg-card p-1">
-            {(['before', 'after'] as const).map((v) => <button key={v} onClick={() => setMobileView(v)} className={`py-2 text-xs font-bold uppercase ${mobileView === v ? (v === 'before' ? 'bg-primary text-primary-foreground' : 'bg-success text-success-foreground') : 'text-muted-foreground'}`}>{v === 'before' ? 'Before · Manual' : 'After · Upcurv'}</button>)}
+            {(['before', 'after'] as const).map((v) => <button key={v} onClick={() => setMobileView(v)} className={`py-2 text-xs font-bold uppercase ${mobileView === v ? (v === 'before' ? 'bg-primary text-primary-foreground' : 'bg-foreground text-background') : 'text-muted-foreground'}`}>{v === 'before' ? 'Before · Manual' : 'After · Upcurv'}</button>)}
           </div>
           <div className={`mt-3 border border-border p-5 ${mobileView === 'before' ? 'bg-accent' : 'bg-card'}`}>
             <h3 className="font-display text-xl font-bold">{mobileView === 'before' ? 'The day depends on memory and messages.' : 'Every booking has a clear path.'}</h3>
-            <div className="mt-5 space-y-4">{mobileItems.map(([Icon, title, copy]) => { const I = Icon as typeof Check; return <div key={title as string} className="flex gap-3 border-b border-border pb-4 last:border-0"><span className={`flex h-9 w-9 shrink-0 items-center justify-center ${mobileView === 'before' ? 'bg-primary/10 text-primary' : 'bg-success/10 text-success'}`}><I className="h-4 w-4" /></span><div><p className="text-sm font-bold">{title as string}</p><p className="mt-1 text-xs leading-5 text-muted-foreground">{copy as string}</p></div></div>; })}</div>
+            <div className="mt-5 space-y-4">{mobileItems.map(([Icon, title, copy]) => { const I = Icon as typeof Check; return <div key={title as string} className="flex gap-3 border-b border-border pb-4 last:border-0"><span className={`flex h-9 w-9 shrink-0 items-center justify-center ${mobileView === 'before' ? 'bg-primary/10 text-primary' : 'bg-muted text-foreground'}`}><I className="h-4 w-4" /></span><div><p className="text-sm font-bold">{title as string}</p><p className="mt-1 text-xs leading-5 text-muted-foreground">{copy as string}</p></div></div>; })}</div>
           </div>
         </div>
 
         <div className="relative mt-10 hidden min-h-[430px] overflow-hidden border border-border bg-card shadow-lg md:block">
           <div className="absolute inset-0 grid content-start bg-card p-5 sm:p-8 lg:p-10">
             <div className="ml-auto w-full pl-10 sm:w-1/2 sm:pl-12">
-              <p className="text-xs font-bold uppercase text-success">After · With Upcurv Custom SaaS</p>
+              <p className="text-xs font-bold uppercase text-foreground">After · With Upcurv Custom SaaS</p>
               <h3 className="mt-2 font-display text-2xl font-bold">Every booking has a clear path.</h3>
               <div className="mt-7 space-y-4">
                 {afterItems.map(([Icon, title, copy]) => {
                   const ItemIcon = Icon as typeof Check;
-                  return <div key={title as string} className="flex gap-3 border-b border-border pb-4"><span className="flex h-9 w-9 shrink-0 items-center justify-center bg-success/10 text-success"><ItemIcon className="h-4 w-4" /></span><div><p className="text-sm font-bold">{title as string}</p><p className="mt-1 text-xs leading-5 text-muted-foreground">{copy as string}</p></div></div>;
+                  return <div key={title as string} className="flex gap-3 border-b border-border pb-4"><span className="flex h-9 w-9 shrink-0 items-center justify-center bg-muted text-foreground"><ItemIcon className="h-4 w-4" /></span><div><p className="text-sm font-bold">{title as string}</p><p className="mt-1 text-xs leading-5 text-muted-foreground">{copy as string}</p></div></div>;
                 })}
               </div>
             </div>
